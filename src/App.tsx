@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ToDoPage from "./pages/ToDoPage";
+import GroceryListPage from "./pages/GroceryListPage";
+import LandingPage from "./pages/LandingPage";
+import SideBar from "./components/SideBar";
+import MyHeader from "./components/Header";
+import { Layout, Menu } from 'antd';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const { Header, Footer, Sider, Content } = Layout;
+
+function HomeApp() {
+    return (
+        <Router>
+            <div>
+                <Layout>
+                    <Header style={{ background: "#E5f1f7", padding: 0, textAlign: "center" }}>
+                        <MyHeader />
+                    </Header>
+                    <Layout>
+                        <Sider>
+                            <Menu theme="light" defaultSelectedKeys={["1"]} mode="inline" style={{ background: "#E5f1f7", padding: 0, textAlign: "center" }}>
+                                <SideBar />
+                            </Menu>
+                        </Sider>
+                        <Content>
+                            <div>
+                                <Routes>
+                                    <Route path="/" element={<LandingPage />}/>
+                                    <Route path="/todoList" element={<ToDoPage />}/>
+                                    <Route path="/groceryList" element={<GroceryListPage />}/>
+                                </Routes>
+                            </div>
+                        </Content>
+                    </Layout>
+                    <Footer style={{ background: "#E5f1f7", padding: 0, textAlign: "center" }}>Footer!</Footer>
+                </Layout>
+            </div>
+        </Router>
+    );
 }
 
-export default App;
+export default HomeApp;
