@@ -15,7 +15,7 @@ const SideBar: React.FC = () => {
     });
 
     return (
-        <div>
+        <div style={{background: "#E5f1f7"}}>
             {renderedLinks}
         </div>
     );

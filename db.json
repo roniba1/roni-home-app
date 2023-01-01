@@ -1,0 +1,30 @@
+{
+  "toDo": [
+    {
+      "content": "Doctor Appointment",
+      "type": "todo",
+      "id": 1
+    },
+    {
+      "content": "Call Mom",
+      "type": "done",
+      "id": 2
+    },
+    {
+      "content": "Fix Something",
+      "type": "todo",
+      "id": 3
+    },
+    {
+      "content": "Laundry",
+      "type": "done",
+      "id": 4
+    },
+    {
+      "content": "Go To Sleep",
+      "type": "todo",
+      "id": 5
+    }
+  ],
+  "grocery": []
+}
