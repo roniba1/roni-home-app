@@ -1,21 +1,20 @@
 import React, { useState, useEffect } from "react";
 import AddItem from "../components/AddItem";
-import {Items, SingleItem} from "../interfaces/Items";
+import { Items, SingleItem, toDoConstants } from "../interfaces/Items";
 import ItemsList from "../components/ItemsList";
 import { Col, Row, Divider } from 'antd';
-import axios from 'axios';
+import FetcherService from "../services/FetcherService";
 
 const style = {
-    background: '#0092ff',
-    padding: '8px 0',
+    padding: '8px 0'
 };
 
 const ToDoPage: React.FC = () => {
     const [toDoList, setToDoList] = useState<Items | null>(null);
 
     const fetchData = async () => {
-        const response = await axios.get<Items>('http://localhost:3001/toDo');
-        setToDoList(response.data);
+        const response = await FetcherService.fetchData(toDoConstants.LIST_NAME);
+        setToDoList(response);
     }
 
     useEffect(() => {
@@ -23,7 +22,7 @@ const ToDoPage: React.FC = () => {
     }, []);
 
     const onDeleteHandler = async (id: number) => {
-        await axios.put<SingleItem>(`http://localhost:3001/toDo/${id}`);
+        await FetcherService.deleteItem(toDoConstants.LIST_NAME, id);
 
         if (toDoList) {
             const updatedToDoList = toDoList.filter((item) => {
@@ -34,14 +33,15 @@ const ToDoPage: React.FC = () => {
     }
 
     const onItemAdded = async (itemText: string) => {
-        console.log(itemText);
-        const response = await axios.post<SingleItem>('http://localhost:3001/toDo', {
+        const itemObj = {
             content: itemText,
             type: "todo"
-        });
+        };
+
+        const response = await FetcherService.addItem(toDoConstants.LIST_NAME, itemObj);
         const updatedToDoList = [
             ...toDoList!,
-            response.data
+            response
         ];
         setToDoList(updatedToDoList);
     }
@@ -54,12 +54,15 @@ const ToDoPage: React.FC = () => {
 
     const onDoneHandler = async (id: number) => {
         const doneItem = toDoList!.find(isItemId(id));
-        const response = await axios.put<SingleItem>(`http://localhost:3001/toDo/${id}`, {
-            ...doneItem, type:"done"
-        });
+        const newItem = {
+            ...doneItem,
+            type: "done"
+        } as SingleItem;
+        const response = await FetcherService.editItem(toDoConstants.LIST_NAME, id, newItem);
+
         const updatedToDoList = toDoList!.map((item) => {
             if (item.id === id) {
-                return { ...item, ...response.data};
+                return { ...item, ...response};
             }
 
             return item;

@@ -11,19 +11,19 @@
       "id": 2
     },
     {
-      "content": "Fix Something",
-      "type": "todo",
-      "id": 3
-    },
-    {
       "content": "Laundry",
       "type": "done",
       "id": 4
     },
     {
-      "content": "Go To Sleep",
+      "content": "Fix TV",
       "type": "todo",
-      "id": 5
+      "id": 6
+    },
+    {
+      "content": "Roni",
+      "type": "todo",
+      "id": 7
     }
   ],
   "grocery": []

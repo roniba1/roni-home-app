@@ -4,6 +4,10 @@ export interface SingleItem {
     id: number
 }
 
+export class toDoConstants {
+    static LIST_NAME = "todo";
+}
+
 export type Items = SingleItem[] | null;
 
 export interface ItemsListProps {
