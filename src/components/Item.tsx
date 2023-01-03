@@ -1,24 +1,29 @@
 import React from "react";
 import { ItemProps } from "../interfaces/Items";
-import { CheckOutlined, DeleteOutlined } from "@ant-design/icons";
+import { CheckOutlined, DeleteOutlined, BorderOutlined, CheckSquareOutlined } from "@ant-design/icons";
 import { Button, Space } from "antd";
 
 const Item: React.FC<ItemProps> = props => {
     const getButtonItem = () => {
-        if (props.doneButton) {
+        if (props.item.type !== "done") {
             return <Button
-                icon={<CheckOutlined style={{fontSize: "15px"}}/>}
+                type="text"
+                icon={<BorderOutlined style={{fontSize: "15px"}}/>}
                 onClick={() => props.onDoneHandler(props.item.id)}
             />
-        } else return null;
+        } else return <CheckSquareOutlined style={{fontSize: "15px"}}/>;
+        // <Button
+        //     icon={<CheckSquareOutlined style={{fontSize: "15px"}}/>}
+        // />;
     }
     const buttonItem = getButtonItem();
 
     return <div>
-        <Space size={'middle'}>
+        <Space size={'small'} align={'center'}>
             {buttonItem}
             {props.item.content}
             <Button
+                type="text"
                 icon={<DeleteOutlined style={{fontSize: "15px"}}/>}
                 onClick={() => props.onDeleteHandler(props.item.id)}
             />

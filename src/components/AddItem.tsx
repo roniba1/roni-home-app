@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { ListsPageSettings } from "../interfaces/ListsPageSettings";
 
 type AddItemProps = {
-    onItemAdded: (itemText: string) => void;
+    onItemAdded: (itemText: string, type: string) => Promise<void>,
+    listsSettings: ListsPageSettings
 };
 
 const AddItem: React.FC<AddItemProps> = props => {
@@ -10,9 +12,9 @@ const AddItem: React.FC<AddItemProps> = props => {
     const handleChange = (event: React.FormEvent<HTMLInputElement>) => {
         setNewContent(event.currentTarget.value);
     }
-    const addItemSubmitHandler = (event: React.FormEvent) => {
+    const addItemSubmitHandler = async (event: React.FormEvent) => {
         event.preventDefault();
-        props.onItemAdded(newContent);
+        await props.onItemAdded(newContent, props.listsSettings.newItemType());
         setNewContent('');
     };
 
