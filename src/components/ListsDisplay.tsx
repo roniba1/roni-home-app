@@ -6,8 +6,6 @@ import { Divider, Col, Row } from "antd";
 import AddItem from "./AddItem";
 import ItemsList from "./ItemsList";
 
-
-
 interface ListsDisplayProps {
     listsSettings: ListsPageSettings
 }

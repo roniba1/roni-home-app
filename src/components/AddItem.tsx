@@ -1,62 +1,59 @@
-import React, { useState } from "react";
-import { ListsPageSettings } from "../interfaces/ListsPageSettings";
-import { Button, Modal, Select, Form, Input } from 'antd';
-
-type AddItemProps = {
-    onItemAdded: (itemText: string, type: string) => Promise<void>,
-    listsSettings: ListsPageSettings
-};
+import React, { useReducer } from "react";
+import { Button, Modal, Select, Form, Input, Space } from 'antd';
+import { AddItemProps, AddItemActionKind, reducer, layout, tailLayout } from "./AddItemSettings";
 
 const AddItem: React.FC<AddItemProps> = props => {
-    const [newContent, setNewContent] = useState('');
-    const [contentType, setContentType] = useState('');
-    const [open, setOpen] = useState(false);
-    const [confirmLoading, setConfirmLoading] = useState(false);
+    const [state, dispatch] = useReducer(reducer, {
+        newContent: '',
+        contentType: '',
+        open: false
+    });
     const [form] = Form.useForm();
 
-    const layout = {
-        labelCol: { span: 8 },
-        wrapperCol: { span: 16 },
-    };
-
-    const tailLayout = {
-        wrapperCol: { offset: 8, span: 16 },
-    };
-
     const showModal = () => {
-        setOpen(true);
-    };
-
-    const handleCancel = () => {
-        console.log('Clicked cancel button');
-        form.resetFields();
-        setNewContent('');
-        setContentType('');
-        setOpen(false);
-    };
-
-    const handleInputChange = (event: React.FormEvent<HTMLInputElement>) => {
-        setNewContent(event.currentTarget.value);
-    }
-
-    const handleSelectChange = (value: string) => {
-        setContentType(value);
-    }
-
-    const addItemSubmitHandler = async () => {
-        setConfirmLoading(true);
-
-        props.onItemAdded(newContent,
-            contentType ? contentType : props.listsSettings.newItemType()).then(() => {
-            form.resetFields();
-            setNewContent('');
-            setContentType('');
-            setOpen(false);
-            setConfirmLoading(false);
+        dispatch({
+            type: AddItemActionKind.OPEN,
+            payload: true
         });
     };
 
-    const options = props.listsSettings.typesNames.map((listType) => {
+    const resetForm = () => {
+        form.resetFields();
+        dispatch({
+            type: AddItemActionKind.ALL,
+            payload: {
+                newContent: '',
+                contentType: '',
+                open: false
+            }
+        });
+    }
+
+    const handleInputChange = (event: React.FormEvent<HTMLInputElement>) => {
+        dispatch({
+            type: AddItemActionKind.CONTENT,
+            payload: event.currentTarget.value
+        });
+    }
+
+    const handleSelectChange = (value: string) => {
+        dispatch({
+            type: AddItemActionKind.TYPE,
+            payload: value
+        });
+    }
+
+    const addItemSubmitHandler = async () => {
+        props.onItemAdded(state.newContent,
+            state.contentType ?
+                state.contentType : props.listsSettings.newItemType()).then(() => resetForm());
+    };
+
+    const typesListToAdd = props.listsSettings.typesNames.filter((listType) => {
+        return listType.type !== "done";
+    });
+
+    const options = typesListToAdd.map((listType) => {
         return {
             value: listType.type,
             label: listType.displayName
@@ -65,7 +62,7 @@ const AddItem: React.FC<AddItemProps> = props => {
 
     const inputComponent = (
         <Form.Item name="item" label="Item" rules={[{ required: true }]}>
-            <Input value={newContent} onChange={handleInputChange}/>
+            <Input value={state.newContent} onChange={handleInputChange}/>
         </Form.Item>
     );
 
@@ -73,7 +70,7 @@ const AddItem: React.FC<AddItemProps> = props => {
         <Form.Item name="type" label="Category" rules={[{ required: true }]}>
             <Select
                 placeholder="Choose category"
-                value={contentType}
+                value={state.contentType}
                 onChange={handleSelectChange}
                 options={options}
             />
@@ -85,12 +82,14 @@ const AddItem: React.FC<AddItemProps> = props => {
             {inputComponent}
             {selectComponent}
             <Form.Item {...tailLayout}>
-                <Button type="primary" htmlType="submit">
-                    Submit
-                </Button>
-                <Button htmlType="button" onClick={handleCancel}>
-                    Cancel
-                </Button>
+                <Space>
+                    <Button type="primary" htmlType="submit">
+                        Submit
+                    </Button>
+                    <Button htmlType="button" onClick={resetForm}>
+                        Cancel
+                    </Button>
+                </Space>
             </Form.Item>
         </Form>
     );
@@ -103,10 +102,8 @@ const AddItem: React.FC<AddItemProps> = props => {
             </Button>
             <Modal
                 title={props.listsSettings.addItemText}
-                open={open}
-                //onOk={addItemSubmitHandler}
-                confirmLoading={confirmLoading}
-                onCancel={handleCancel}
+                open={state.open}
+                onCancel={resetForm}
                 footer={[]}
             >
                 {modalForm}

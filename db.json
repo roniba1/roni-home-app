@@ -49,6 +49,11 @@
       "content": "Dishes",
       "type": "todo",
       "id": 14
+    },
+    {
+      "content": "Pick up the kids",
+      "type": "todo",
+      "id": 15
     }
   ],
   "grocery": [
@@ -91,6 +96,21 @@
       "content": "Cola",
       "type": "beverages",
       "id": 8
+    },
+    {
+      "content": "Ice cream",
+      "type": "frozen",
+      "id": 9
+    },
+    {
+      "content": "Salt",
+      "type": "cond",
+      "id": 10
+    },
+    {
+      "content": "Strawberry",
+      "type": "done",
+      "id": 11
     }
   ]
 }
