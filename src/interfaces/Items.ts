@@ -22,6 +22,7 @@ export class toDoConstants {
         }
     ];
     static NEW_ITEM_TYPE = "todo";
+    static ADD_ITEM_TEXT = "Add New Task";
 }
 
 export class groceryConstants {
@@ -72,13 +73,14 @@ export class groceryConstants {
             displayName: "Done"
         }
     ];
+    static ADD_ITEM_TEXT = "Add New Product";
 }
 
 export type Items = SingleItem[] | null;
 
 export interface ItemsListProps {
     itemsList: Items,
-    listType: string,
+    listType: ListType,
     onDoneHandler: (id: number) => void,
     doneButton: boolean,
     onDeleteHandler: (id: number) => void

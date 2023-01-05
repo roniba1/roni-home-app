@@ -19,6 +19,26 @@
       "content": "Fix Something",
       "type": "todo",
       "id": 8
+    },
+    {
+      "content": "Go To Sleep",
+      "type": "done",
+      "id": 9
+    },
+    {
+      "content": "Go to supermarket",
+      "type": "todo",
+      "id": 10
+    },
+    {
+      "content": "Watch TV",
+      "type": "todo",
+      "id": 11
+    },
+    {
+      "content": "Sleep",
+      "type": "todo",
+      "id": 12
     }
   ],
   "grocery": [
@@ -46,6 +66,16 @@
       "content": "Cucumbers",
       "type": "vegetables",
       "id": 5
+    },
+    {
+      "content": "Chicken",
+      "type": "meat",
+      "id": 6
+    },
+    {
+      "content": "Broccoli",
+      "type": "vegetables",
+      "id": 7
     }
   ]
 }

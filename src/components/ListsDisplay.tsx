@@ -6,9 +6,7 @@ import { Divider, Col, Row } from "antd";
 import AddItem from "./AddItem";
 import ItemsList from "./ItemsList";
 
-const style = {
-    padding: '8px 0'
-};
+
 
 interface ListsDisplayProps {
     listsSettings: ListsPageSettings
@@ -82,16 +80,13 @@ const ListsDisplay: React.FC<ListsDisplayProps> = props => {
     if(allItemsList) {
         renderedList = listsSettings.typesNames.map((listType:ListType) => {
             return (
-                <Col className="gutter-row" span={6}>
-                    <Divider type="horizontal" orientation="left">{listType.displayName}</Divider>
-                    <div style={style}>
-                        <ItemsList
-                            itemsList={allItemsList}
-                            listType={listType.type}
-                            onDeleteHandler={onDeleteHandler}
-                            onDoneHandler={onDoneHandler}
-                            doneButton/>
-                    </div>
+                <Col className="gutter-row" span={6} key={listType.type}>
+                    <ItemsList
+                        itemsList={allItemsList}
+                        listType={listType}
+                        onDeleteHandler={onDeleteHandler}
+                        onDoneHandler={onDoneHandler}
+                        doneButton/>
                 </Col>
             );
         })

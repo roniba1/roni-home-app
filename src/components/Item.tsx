@@ -1,6 +1,6 @@
 import React from "react";
 import { ItemProps } from "../interfaces/Items";
-import { CheckOutlined, DeleteOutlined, BorderOutlined, CheckSquareOutlined } from "@ant-design/icons";
+import { DeleteOutlined, BorderOutlined, CheckSquareOutlined } from "@ant-design/icons";
 import { Button, Space } from "antd";
 
 const Item: React.FC<ItemProps> = props => {
@@ -12,9 +12,6 @@ const Item: React.FC<ItemProps> = props => {
                 onClick={() => props.onDoneHandler(props.item.id)}
             />
         } else return <CheckSquareOutlined style={{fontSize: "15px"}}/>;
-        // <Button
-        //     icon={<CheckSquareOutlined style={{fontSize: "15px"}}/>}
-        // />;
     }
     const buttonItem = getButtonItem();
 
