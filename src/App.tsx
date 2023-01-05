@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ToDoPage from "./pages/ToDoPage";
 import GroceryListPage from "./pages/GroceryListPage";
 import LandingPage from "./pages/LandingPage";
@@ -7,9 +7,7 @@ import SideBar from "./components/SideBar";
 import MyHeader from "./components/Header";
 import { Layout } from 'antd';
 
-
 const { Header, Footer, Sider, Content } = Layout;
-
 
 function HomeApp() {
     return (

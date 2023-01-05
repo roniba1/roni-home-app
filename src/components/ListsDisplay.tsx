@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react";
-import {ListsPageSettings} from "../interfaces/ListsPageSettings";
+import React, { useEffect, useState } from "react";
+import { ListsPageSettings } from "../interfaces/ListsPageSettings";
 import { Items, ListType, SingleItem } from "../interfaces/Items";
 import FetcherService from "../services/FetcherService";
 import { Divider, Col, Row } from "antd";

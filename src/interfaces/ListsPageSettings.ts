@@ -1,4 +1,4 @@
-import {groceryConstants, ListType, toDoConstants} from "./Items";
+import { groceryConstants, ListType, toDoConstants } from "./Items";
 
 export abstract class ListsPageSettings {
     protected readonly mainListName: string;

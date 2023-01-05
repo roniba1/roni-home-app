@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import {PagesLinks, PageLink} from "../constants/PagesLinks";
+import { PagesLinks, PageLink } from "../constants/PagesLinks";
 import { Menu } from 'antd';
 
 const SideBar: React.FC = () => {

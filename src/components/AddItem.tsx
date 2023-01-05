@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ListsPageSettings } from "../interfaces/ListsPageSettings";
-import {Button, Modal, Select, Form, Input} from 'antd';
+import { Button, Modal, Select, Form, Input } from 'antd';
 
 type AddItemProps = {
     onItemAdded: (itemText: string, type: string) => Promise<void>,
@@ -29,6 +29,7 @@ const AddItem: React.FC<AddItemProps> = props => {
 
     const handleCancel = () => {
         console.log('Clicked cancel button');
+        form.resetFields();
         setNewContent('');
         setContentType('');
         setOpen(false);
@@ -42,11 +43,12 @@ const AddItem: React.FC<AddItemProps> = props => {
         setContentType(value);
     }
 
-    const addItemSubmitHandler = async (event: React.FormEvent) => {
-        //event.preventDefault();
+    const addItemSubmitHandler = async () => {
         setConfirmLoading(true);
+
         props.onItemAdded(newContent,
             contentType ? contentType : props.listsSettings.newItemType()).then(() => {
+            form.resetFields();
             setNewContent('');
             setContentType('');
             setOpen(false);
@@ -61,18 +63,27 @@ const AddItem: React.FC<AddItemProps> = props => {
         };
     });
 
+    const inputComponent = (
+        <Form.Item name="item" label="Item" rules={[{ required: true }]}>
+            <Input value={newContent} onChange={handleInputChange}/>
+        </Form.Item>
+    );
+
+    const selectComponent = options.length > 2 ? (
+        <Form.Item name="type" label="Category" rules={[{ required: true }]}>
+            <Select
+                placeholder="Choose category"
+                value={contentType}
+                onChange={handleSelectChange}
+                options={options}
+            />
+        </Form.Item>
+    ) : null;
+
     const modalForm = (
         <Form {...layout} form={form} name="control-hooks" onFinish={addItemSubmitHandler}>
-            <Form.Item name="item" label="Item" rules={[{ required: true }]}>
-                <Input value={newContent} onChange={handleInputChange}/>
-            </Form.Item>
-            <Form.Item name="type" label="Category" rules={[{ required: true }]}>
-                <Select
-                    placeholder="Choose category"
-                    onChange={handleSelectChange}
-                    options={options}
-                />
-            </Form.Item>
+            {inputComponent}
+            {selectComponent}
             <Form.Item {...tailLayout}>
                 <Button type="primary" htmlType="submit">
                     Submit

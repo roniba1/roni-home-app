@@ -39,6 +39,16 @@
       "content": "Sleep",
       "type": "todo",
       "id": 12
+    },
+    {
+      "content": "Pick up the kids",
+      "type": "done",
+      "id": 13
+    },
+    {
+      "content": "Dishes",
+      "type": "todo",
+      "id": 14
     }
   ],
   "grocery": [
@@ -59,7 +69,7 @@
     },
     {
       "content": "Banana",
-      "type": "fruits",
+      "type": "done",
       "id": 4
     },
     {
@@ -76,6 +86,11 @@
       "content": "Broccoli",
       "type": "vegetables",
       "id": 7
+    },
+    {
+      "content": "Cola",
+      "type": "beverages",
+      "id": 8
     }
   ]
 }
