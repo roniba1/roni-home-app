@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ToDoPage from "./pages/ToDoPage";
 import GroceryListPage from "./pages/GroceryListPage";
 import LandingPage from "./pages/LandingPage";
+import CalendarPage from "./pages/CalendarPage";
 import SideBar from "./components/SideBar";
 import MyHeader from "./components/Header";
 import { Layout } from 'antd';
@@ -32,6 +33,9 @@ function HomeApp() {
                                     </Route>
                                     <Route path="/groceryList">
                                         <GroceryListPage />
+                                    </Route>
+                                    <Route path="/calendar">
+                                        <CalendarPage />
                                     </Route>
                                 </Switch>
                             </div>

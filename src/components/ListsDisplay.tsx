@@ -78,14 +78,12 @@ const ListsDisplay: React.FC<ListsDisplayProps> = props => {
     if(allItemsList) {
         renderedList = listsSettings.typesNames.map((listType:ListType) => {
             return (
-                <Col className="gutter-row" span={6} key={listType.type}>
                     <ItemsList
                         itemsList={allItemsList}
                         listType={listType}
                         onDeleteHandler={onDeleteHandler}
                         onDoneHandler={onDoneHandler}
                         doneButton/>
-                </Col>
             );
         })
     }

@@ -112,5 +112,39 @@
       "type": "done",
       "id": 11
     }
+  ],
+  "calendar": [
+    [],
+    [],
+    [
+      {
+        "id": 10,
+        "content": [
+          {
+            "type": "warning",
+            "content": "This is warning event."
+          },
+          {
+            "type": "success",
+            "content": "This is usual event."
+          }
+        ]
+      }
+    ],
+    [
+      {
+        "type": "success",
+        "content": "Doctor appointment"
+      }
+    ],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
   ]
 }

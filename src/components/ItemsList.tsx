@@ -1,7 +1,7 @@
 import React from "react";
 import { ItemsListProps } from "../interfaces/Items";
 import Item from "./Item"
-import { Divider } from "antd";
+import { Divider, Col } from "antd";
 
 const style = {
     padding: '8px 0'
@@ -29,18 +29,16 @@ const ItemsList: React.FC<ItemsListProps> = props => {
     let renderedComponent = null;
     if (hasItems) {
         renderedComponent = (
-            <>
+            <Col className="gutter-row" span={8} key={props.listType.type}>
                 <Divider type="horizontal" orientation="left">{props.listType.displayName}</Divider>
                 <div style={style}>
                     {renderedList}
                 </div>
-            </>
+            </Col>
         );
     }
 
-    return <div>
-        {renderedComponent}
-    </div>;
+    return renderedComponent;
 }
 
 export default ItemsList;
