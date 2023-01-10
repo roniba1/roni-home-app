@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { ListsPageSettings } from "../interfaces/ListsPageSettings";
-import { Items, ListType, SingleItem } from "../interfaces/Items";
-import FetcherService from "../services/FetcherService";
+import ListsPageSettings from "../../classes/lists/ListsPageSettings"
+import IItems from "../../interfaces/items/IItems";
+import IListType from "../../interfaces/lists/IListType";
+import ISingleItem from "../../interfaces/items/ISingleItem";
+import FetcherService from "../../services/FetcherService";
 import { Space, Col, Row } from "antd";
-import AddItem from "./AddItem";
+import AddItem from "../items/AddItem";
 import ItemsList from "./ItemsList";
 
 interface ListsDisplayProps {
@@ -12,7 +14,7 @@ interface ListsDisplayProps {
 
 const ListsDisplay: React.FC<ListsDisplayProps> = props => {
     const listsSettings = props.listsSettings;
-    const [allItemsList, setAllItemsList] = useState<Items | null>(null);
+    const [allItemsList, setAllItemsList] = useState<IItems | null>(null);
 
     const fetchData = async () => {
         const response = await FetcherService.fetchData(listsSettings.listName);
@@ -50,7 +52,7 @@ const ListsDisplay: React.FC<ListsDisplayProps> = props => {
     }
 
     const isItemId = (id: number) => {
-        return (item: SingleItem) => {
+        return (item: ISingleItem) => {
             return item.id === id;
         }
     }
@@ -60,7 +62,7 @@ const ListsDisplay: React.FC<ListsDisplayProps> = props => {
         const newItem = {
             ...doneItem,
             type: "done"
-        } as SingleItem;
+        } as ISingleItem;
         const response = await FetcherService.editItem(listsSettings.listName, id, newItem);
 
         const updatedList = allItemsList!.map((item) => {
@@ -76,7 +78,7 @@ const ListsDisplay: React.FC<ListsDisplayProps> = props => {
 
     let renderedList = null;
     if (allItemsList) {
-        renderedList = listsSettings.typesNames.map((listType:ListType) => {
+        renderedList = listsSettings.typesNames.map((listType:IListType) => {
             return (
                     <ItemsList
                         itemsList={allItemsList}

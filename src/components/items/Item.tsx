@@ -1,9 +1,9 @@
 import React from "react";
-import { ItemProps } from "../interfaces/Items";
+import IItemProps from "../../interfaces/items/IItemProps";
 import { DeleteOutlined } from "@ant-design/icons";
-import { Button, Space, Checkbox, Row, Col } from "antd";
+import { Button, Space, Checkbox } from "antd";
 
-const Item: React.FC<ItemProps> = props => {
+const Item: React.FC<IItemProps> = props => {
     const getCheckboxItem = () => {
         const checked = props.item.type === "done";
         return (<Checkbox checked={checked} disabled={checked} onChange={() => props.onDoneHandler(props.item.id)}>

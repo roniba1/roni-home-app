@@ -4,8 +4,8 @@ import ToDoPage from "./pages/ToDoPage";
 import GroceryListPage from "./pages/GroceryListPage";
 import LandingPage from "./pages/LandingPage";
 import CalendarPage from "./pages/CalendarPage";
-import SideBar from "./components/SideBar";
-import MyHeader from "./components/Header";
+import SideBar from "./components/layout/SideBar";
+import MyHeader from "./components/layout/Header";
 import { Layout } from 'antd';
 import ForecastPage from "./pages/ForecastPage";
 

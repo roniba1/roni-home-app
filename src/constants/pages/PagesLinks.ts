@@ -1,9 +1,6 @@
-export interface PageLink {
-    label: string,
-    path: string
-}
+import IPageLink from "../../interfaces/pages/IPageLink";
 
-export const PagesLinks: PageLink[] = [
+const PagesLinks: IPageLink[] = [
     {
         label:'Home',
         path: '/'
@@ -25,5 +22,7 @@ export const PagesLinks: PageLink[] = [
         path: '/forecast'
     }
 ];
+
+export default PagesLinks;
 
 

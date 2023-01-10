@@ -1,8 +1,10 @@
 import React, { useReducer } from "react";
 import { Button, Modal, Select, Form, Input, Space } from 'antd';
-import { AddItemProps, AddItemActionKind, reducer, layout, tailLayout } from "./AddItemSettings";
+import reducer from "./AddItemReducer";
+import IAddItemProps from "../../interfaces/items/IAddItemProps";
+import { AddItemActionKind, layout, tailLayout } from "../../constants/items/AddItemConstants"
 
-const AddItem: React.FC<AddItemProps> = props => {
+const AddItem: React.FC<IAddItemProps> = props => {
     const [state, dispatch] = useReducer(reducer, {
         newContent: '',
         contentType: '',

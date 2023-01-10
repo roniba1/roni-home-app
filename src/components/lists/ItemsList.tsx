@@ -1,13 +1,9 @@
 import React from "react";
-import { ItemsListProps } from "../interfaces/Items";
-import Item from "./Item"
-import { Divider, Col, List } from "antd";
+import IItemsListProps from "../../interfaces/lists/IItemsListProps";
+import Item from "../items/Item"
+import { Col, List } from "antd";
 
-const style = {
-    padding: '8px 0'
-};
-
-const ItemsList: React.FC<ItemsListProps> = props => {
+const ItemsList: React.FC<IItemsListProps> = props => {
 
     let renderedList = undefined;
     let hasItems = false;
@@ -25,7 +21,7 @@ const ItemsList: React.FC<ItemsListProps> = props => {
             else return null;
         });
     }
-    console.log(renderedList);
+
     if (renderedList) {
         renderedList = renderedList.filter((item) => {
             return item !== null;

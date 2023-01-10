@@ -1,11 +1,12 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { PagesLinks, PageLink } from "../constants/PagesLinks";
+import PagesLinks from "../../constants/pages/PagesLinks";
+import IPageLink from "../../interfaces/pages/IPageLink";
 import { Menu } from 'antd';
 
 const SideBar: React.FC = () => {
     const history = useHistory();
-    const renderedLinks = PagesLinks.map((link:PageLink) => {
+    const renderedLinks = PagesLinks.map((link:IPageLink) => {
         return (
             {
                 label: link.label,

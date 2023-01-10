@@ -1,6 +1,6 @@
 import React from "react";
-import {ToDoListsPageSettings} from "../interfaces/ListsPageSettings";
-import ListsDisplay from "../components/ListsDisplay";
+import ToDoListsPageSettings from "../classes/lists/ToDoListsPageSettings";
+import ListsDisplay from "../components/lists/ListsDisplay";
 
 const ToDoPage: React.FC = () => {
     const toDoListPageSettings = new ToDoListsPageSettings();
