@@ -7,6 +7,7 @@ import CalendarPage from "./pages/CalendarPage";
 import SideBar from "./components/SideBar";
 import MyHeader from "./components/Header";
 import { Layout } from 'antd';
+import ForecastPage from "./pages/ForecastPage";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -18,8 +19,9 @@ function HomeApp() {
                     <Header style={{ background: "#E5f1f7", padding: 0, textAlign: "center" }}>
                         <MyHeader />
                     </Header>
-                    <Layout>
-                        <Sider theme={"light"} style={{background: "#E5f1f7"}}>
+                    <Layout style={{ display: 'flex', minHeight: '100vh', height: '100vh' }}>
+                        <Sider theme={"light"}
+                               style={{background: "#E5f1f7"}}>
                             <SideBar />
                         </Sider>
                         <Content>
@@ -36,6 +38,9 @@ function HomeApp() {
                                     </Route>
                                     <Route path="/calendar">
                                         <CalendarPage />
+                                    </Route>
+                                    <Route path="/forecast">
+                                        <ForecastPage />
                                     </Route>
                                 </Switch>
                             </div>

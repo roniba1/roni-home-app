@@ -1,7 +1,7 @@
 import React from "react";
 import { ItemsListProps } from "../interfaces/Items";
 import Item from "./Item"
-import { Divider, Col } from "antd";
+import { Divider, Col, List } from "antd";
 
 const style = {
     padding: '8px 0'
@@ -9,7 +9,7 @@ const style = {
 
 const ItemsList: React.FC<ItemsListProps> = props => {
 
-    let renderedList = null;
+    let renderedList = undefined;
     let hasItems = false;
     if (props.itemsList) {
         renderedList = props.itemsList.map((item) => {
@@ -25,15 +25,27 @@ const ItemsList: React.FC<ItemsListProps> = props => {
             else return null;
         });
     }
+    console.log(renderedList);
+    if (renderedList) {
+        renderedList = renderedList.filter((item) => {
+            return item !== null;
+        });
+    }
+    console.log(renderedList);
 
     let renderedComponent = null;
     if (hasItems) {
         renderedComponent = (
-            <Col className="gutter-row" span={8} key={props.listType.type}>
-                <Divider type="horizontal" orientation="left">{props.listType.displayName}</Divider>
-                <div style={style}>
-                    {renderedList}
-                </div>
+            <Col className="gutter-row" span={6} key={props.listType.type}>
+                <List
+                    header={<div>{props.listType.displayName}</div>}
+                    bordered
+                    dataSource={renderedList}
+                renderItem={(item) => (
+                    <List.Item>
+                        {item}
+                    </List.Item>
+                )}/>
             </Col>
         );
     }

@@ -97,7 +97,7 @@ const AddItem: React.FC<AddItemProps> = props => {
 
     return (
         <>
-            <Button type="primary" onClick={showModal}>
+            <Button type="default" onClick={showModal}>
                 {props.listsSettings.addItemText}
             </Button>
             <Modal

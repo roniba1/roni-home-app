@@ -19,6 +19,10 @@ export const PagesLinks: PageLink[] = [
     {
         label:'Calendar',
         path: '/calendar'
+    },
+    {
+        label:'Forecast',
+        path: '/forecast'
     }
 ];
 

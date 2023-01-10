@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ListsPageSettings } from "../interfaces/ListsPageSettings";
 import { Items, ListType, SingleItem } from "../interfaces/Items";
 import FetcherService from "../services/FetcherService";
-import { Divider, Col, Row } from "antd";
+import { Space, Col, Row } from "antd";
 import AddItem from "./AddItem";
 import ItemsList from "./ItemsList";
 
@@ -75,7 +75,7 @@ const ListsDisplay: React.FC<ListsDisplayProps> = props => {
     }
 
     let renderedList = null;
-    if(allItemsList) {
+    if (allItemsList) {
         renderedList = listsSettings.typesNames.map((listType:ListType) => {
             return (
                     <ItemsList
@@ -84,16 +84,28 @@ const ListsDisplay: React.FC<ListsDisplayProps> = props => {
                         onDeleteHandler={onDeleteHandler}
                         onDoneHandler={onDoneHandler}
                         doneButton/>
+
             );
         })
     }
 
-    return <div>
-        <Divider orientation="left">Add Item:</Divider>
-        <AddItem onItemAdded={onItemAdded} listsSettings={listsSettings}/>
-        <Row gutter={16}>
-            {renderedList}
-        </Row>
+    return <div style={{margin: '25px'}}>
+        <Space
+            direction="vertical"
+            size="middle"
+            style={{
+                display: 'flex',
+            }}
+        >
+            <Row gutter={16}>
+                <Col span={6} offset={18}>
+                    <AddItem onItemAdded={onItemAdded} listsSettings={listsSettings}/>
+                </Col>
+            </Row>
+            <Row gutter={[16, 16]}>
+                {renderedList}
+            </Row>
+        </Space>
     </div>
 }
 
