@@ -1,30 +1,29 @@
-import React, { useEffect, useState } from "react";
-import ListsPageSettings from "../../classes/lists/ListsPageSettings"
+import React, {useCallback, useEffect, useState} from "react";
 import IItems from "../../interfaces/items/IItems";
 import IListType from "../../interfaces/lists/IListType";
 import ISingleItem from "../../interfaces/items/ISingleItem";
+import IListsDisplayProps from "../../interfaces/lists/IListsDisplayProps";
 import FetcherService from "../../services/FetcherService";
 import { Space, Col, Row } from "antd";
 import AddItem from "../items/AddItem";
 import ItemsList from "./ItemsList";
 
-interface ListsDisplayProps {
-    listsSettings: ListsPageSettings
-}
-
-const ListsDisplay: React.FC<ListsDisplayProps> = props => {
+const ListsDisplay: React.FC<IListsDisplayProps> = props => {
     const listsSettings = props.listsSettings;
     const [allItemsList, setAllItemsList] = useState<IItems | null>(null);
 
-    const fetchData = async () => {
+    const fetchData = useCallback(async () => {
         const response = await FetcherService.fetchData(listsSettings.listName);
         setAllItemsList(response);
-    }
+    }, [listsSettings.listName]);
 
     useEffect(() => {
         // noinspection JSIgnoredPromiseFromCall
         fetchData();
-    }, []);
+        return () => {
+            console.log("cleanup function");
+        };
+    }, [fetchData]);
 
     const onDeleteHandler = async (id: number) => {
         await FetcherService.deleteItem(listsSettings.listName, id);

@@ -1,56 +1,12 @@
 import React, { useState, useEffect } from "react";
-import {Descriptions, Image, Select} from 'antd'
-
-interface WeatherData {
-    current: {
-        temp: number;
-        feels_like: number;
-        humidity: number;
-        uvi: number;
-        wind_speed: number;
-        clouds: number;
-        weather: [
-            {
-                description: string;
-                icon: string;
-            }
-        ];
-    };
-}
-
-const API_KEY = '7830b3a060d8739ac5d8271370d2f78d';
-const UNITS = 'metric';
-
-interface LocationData {
-    value: string;
-    label: string;
-    latitude: number;
-    longitude: number;
-}
-const LOCATIONS = [
-    {
-        value: "home",
-        label: "Home",
-        latitude: 32.33,
-        longitude: 34.95
-    },
-    {
-        value: "kindergarten",
-        label: "Kindergarten",
-        latitude: 32.36,
-        longitude: 34.92
-    },
-    {
-        value: "work",
-        label: "Work",
-        latitude: 32.27,
-        longitude: 34.85
-    }
-];
+import { API_KEY, UNITS, LOCATIONS } from "../constants/forecast/ForecastConstants";
+import IWeatherData from "../interfaces/forecast/IWeatherData";
+import ILocationData from "../interfaces/forecast/ILocationData";
+import { Descriptions, Image, Select } from 'antd'
 
 const ForecastPage: React.FC = () => {
-    const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
-    const [locationData, setLocationData] = useState<LocationData>(LOCATIONS[0]);
+    const [weatherData, setWeatherData] = useState<IWeatherData | null>(null);
+    const [locationData, setLocationData] = useState<ILocationData>(LOCATIONS[0]);
 
     const getUrl = () => {
         return `https://api.openweathermap.org/data/3.0/onecall?lat=${locationData.latitude}&lon=${locationData.longitude}&units=${UNITS}&appid=${API_KEY}`
@@ -72,6 +28,7 @@ const ForecastPage: React.FC = () => {
     };
 
     useEffect(() => {
+        // noinspection JSIgnoredPromiseFromCall
         fetchData();
     }, [locationData]);
 

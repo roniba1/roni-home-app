@@ -1,29 +1,19 @@
 import React, {useEffect, useState} from "react";
+import IEventData from "../interfaces/calendar/IEventData";
+import IMonthEvents from "../interfaces/calendar/IMonthEvents";
+import IMonthData from "../interfaces/calendar/IMonthData";
 import dayjs from 'dayjs';
 import 'dayjs/locale/zh-cn';
 import { Calendar } from 'antd'
-import FetcherService from "../services/FetcherService";
 import axios from "axios";
 dayjs.locale('zh-cn');
 
-interface eventData {
-    type: "warning" | "success" | "error" | "processing" | "default" | undefined;
-    content: string;
-    id: number;
-}
-
-type MonthEvents = eventData[];
-interface MonthData {
-    id: number;
-    content: MonthEvents;
-}
-
 const CalendarPage: React.FC = () => {
-    const [calendarData, setCalendarData] = useState<MonthEvents | null>(null);
+    const [calendarData, setCalendarData] = useState<IMonthEvents | null>(null);
     const [currentMonth, setCurrentMonth] = useState(dayjs().month());
 
     const fetchData = async (currentMonth: number) => {
-        const response = await axios.get<MonthData>(`http://localhost:3001/calendar/${currentMonth}`);
+        const response = await axios.get<IMonthData>(`http://localhost:3001/calendar/${currentMonth}`);
         setCalendarData(response.data.content);
     }
 
@@ -37,7 +27,7 @@ const CalendarPage: React.FC = () => {
     }
 
     const getListData = (value: dayjs.Dayjs) => {
-        let listData: eventData[] = [];
+        let listData: IEventData[] = [];
         if (value.month() !== currentMonth) {
             return listData;
         }
@@ -54,7 +44,7 @@ const CalendarPage: React.FC = () => {
         const listData = getListData(value);
         return (
             <ul className="events">
-                {listData.map((item: eventData) => (
+                {listData.map((item: IEventData) => (
                     <li key={item.content}>
                         {item.content}
                     </li>

@@ -36,11 +36,6 @@
       "id": 12
     },
     {
-      "content": "Pick up the kids",
-      "type": "done",
-      "id": 13
-    },
-    {
       "content": "Dishes",
       "type": "todo",
       "id": 14
@@ -114,7 +109,7 @@
     },
     {
       "content": "Grapes",
-      "type": "fruits",
+      "type": "done",
       "id": 12
     },
     {
