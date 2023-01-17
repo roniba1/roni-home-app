@@ -4,7 +4,7 @@ import IListType from "../../interfaces/lists/IListType";
 import ISingleItem from "../../interfaces/items/ISingleItem";
 import IListsDisplayProps from "../../interfaces/lists/IListsDisplayProps";
 import FetcherService from "../../services/FetcherService";
-import { Space, Col, Row } from "antd";
+import { Space, Row } from "antd";
 import AddItem from "../items/AddItem";
 import ItemsList from "./ItemsList";
 
@@ -98,11 +98,9 @@ const ListsDisplay: React.FC<IListsDisplayProps> = props => {
                 display: 'flex',
             }}
         >
-            <Row gutter={16}>
-                <Col span={6} offset={18}>
-                    <AddItem onItemAdded={onItemAdded} listsSettings={listsSettings}/>
-                </Col>
-            </Row>
+            <div>
+                <AddItem onItemAdded={onItemAdded} listsSettings={listsSettings}/>
+            </div>
             <Row gutter={[16, 16]}>
                 {renderedList}
             </Row>

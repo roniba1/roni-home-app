@@ -22,3 +22,5 @@ export const LOCATIONS = [
         longitude: 34.85
     }
 ];
+
+export const TITLE = "Current Forecast - ";
