@@ -3,23 +3,28 @@ import IPageLink from "../../interfaces/pages/IPageLink";
 const PagesLinks: IPageLink[] = [
     {
         label:'Home',
-        path: '/'
+        path: '/',
+        icon: 'HomeOutlined'
     },
     {
         label:'To Do List',
-        path: '/todoList'
+        path: '/todoList',
+        icon: 'BarsOutlined'
     },
     {
         label:'Grocery List',
-        path: '/groceryList'
+        path: '/groceryList',
+        icon: 'ShoppingCartOutlined'
     },
     {
         label:'Calendar',
-        path: '/calendar'
+        path: '/calendar',
+        icon: 'CalendarOutlined'
     },
     {
         label:'Forecast',
-        path: '/forecast'
+        path: '/forecast',
+        icon: 'CloudOutlined'
     }
 ];
 
