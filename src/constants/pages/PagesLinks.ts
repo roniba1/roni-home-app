@@ -2,29 +2,34 @@ import IPageLink from "../../interfaces/pages/IPageLink";
 
 const PagesLinks: IPageLink[] = [
     {
-        label:'Home',
+        label: 'Home',
         path: '/',
-        icon: 'HomeOutlined'
+        icon: 'HomeOutlined',
+        description: 'Home'
     },
     {
-        label:'To Do List',
+        label: 'To Do List',
         path: '/todoList',
-        icon: 'BarsOutlined'
+        icon: 'BarsOutlined',
+        description: 'Our To Do List'
     },
     {
-        label:'Grocery List',
+        label: 'Grocery List',
         path: '/groceryList',
-        icon: 'ShoppingCartOutlined'
+        icon: 'ShoppingCartOutlined',
+        description: 'Our Grocery List'
     },
     {
-        label:'Calendar',
+        label: 'Calendar',
         path: '/calendar',
-        icon: 'CalendarOutlined'
+        icon: 'CalendarOutlined',
+        description: 'Calendar with important events'
     },
     {
-        label:'Forecast',
+        label: 'Forecast',
         path: '/forecast',
-        icon: 'CloudOutlined'
+        icon: 'CloudOutlined',
+        description: 'Forecast at our main daily locations'
     }
 ];
 

@@ -25,7 +25,7 @@ const SideBar: React.FC = () => {
     return (
         <Menu theme={"light"}
               mode="inline"
-              style={{ background: "#E5f1f7", padding: 0, textAlign: "center" }}
+              style={{ background: "#E5f1f7", padding: 0, textAlign: "left" }}
               items={renderedLinks}
               onClick={ (value) => history.push(value.key) }>
         </Menu>
