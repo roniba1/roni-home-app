@@ -119,8 +119,43 @@
     },
     {
       "content": "Pepper",
-      "type": "cond",
+      "type": "done",
       "id": 14
+    },
+    {
+      "content": "Cheese",
+      "type": "dairy",
+      "id": 15
+    },
+    {
+      "content": "Milk",
+      "type": "dairy",
+      "id": 16
+    },
+    {
+      "content": "Melon",
+      "type": "fruits",
+      "id": 17
+    },
+    {
+      "content": "Strawberry",
+      "type": "fruits",
+      "id": 18
+    },
+    {
+      "content": "Ham",
+      "type": "deli",
+      "id": 19
+    },
+    {
+      "content": "Pita",
+      "type": "bakery",
+      "id": 20
+    },
+    {
+      "content": "Diapers",
+      "type": "other",
+      "id": 21
     }
   ],
   "calendar": [

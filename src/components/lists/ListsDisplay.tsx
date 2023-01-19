@@ -4,7 +4,7 @@ import IListType from "../../interfaces/lists/IListType";
 import ISingleItem from "../../interfaces/items/ISingleItem";
 import IListsDisplayProps from "../../interfaces/lists/IListsDisplayProps";
 import FetcherService from "../../services/FetcherService";
-import { Space, Row } from "antd";
+import { Space, List } from "antd";
 import AddItem from "../items/AddItem";
 import ItemsList from "./ItemsList";
 
@@ -90,6 +90,17 @@ const ListsDisplay: React.FC<IListsDisplayProps> = props => {
         })
     }
 
+    let listGrid = null;
+    if (renderedList) {
+        listGrid = <List grid={{gutter:16, column:3}}
+                         dataSource={renderedList}
+                         renderItem={(item) => (
+                             <List.Item>
+                                 {item}
+                             </List.Item>)}
+        />;
+    }
+
     return <div style={{margin: '25px'}}>
         <Space
             direction="vertical"
@@ -101,9 +112,7 @@ const ListsDisplay: React.FC<IListsDisplayProps> = props => {
             <div>
                 <AddItem onItemAdded={onItemAdded} listsSettings={listsSettings}/>
             </div>
-            <Row gutter={[16, 16]}>
-                {renderedList}
-            </Row>
+            {listGrid}
         </Space>
     </div>
 }
