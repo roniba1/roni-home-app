@@ -1,7 +1,7 @@
 import ListsPageSettings from "../../classes/lists/ListsPageSettings";
 
 interface IListsDisplayProps {
-    listsSettings: ListsPageSettings;
+  listsSettings: ListsPageSettings;
 }
 
 export default IListsDisplayProps;

@@ -8,7 +8,6 @@ import { Menu, Space, Layout } from "antd";
 const { Sider } = Layout;
 
 const SideBar: React.FC = () => {
-
   const renderedLinks = PagesLinks.map((link: IPageLink) => {
     return (
       <Menu.Item key={link.path}>

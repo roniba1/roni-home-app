@@ -16,9 +16,9 @@ const MyHeader: React.FC = () => {
         height: "90px",
       }}
     >
-        <NavLink to={PagesLinks[0].path}>
-      <Title level={2}>Welcome to Roni's Home App</Title>
-        </NavLink>
+      <NavLink to={PagesLinks[0].path}>
+        <Title level={2}>Welcome to Roni's Home App</Title>
+      </NavLink>
     </Header>
   );
 };
