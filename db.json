@@ -156,6 +156,16 @@
       "content": "Diapers",
       "type": "other",
       "id": 21
+    },
+    {
+      "content": "Toilet Paper",
+      "type": "other",
+      "id": 22
+    },
+    {
+      "content": "Shampoo",
+      "type": "other",
+      "id": 23
     }
   ],
   "calendar": [

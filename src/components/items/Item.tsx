@@ -1,7 +1,7 @@
 import React from "react";
 import IItemProps from "../../interfaces/items/IItemProps";
 import { DeleteOutlined } from "@ant-design/icons";
-import { Button, Space, Checkbox } from "antd";
+import { Button, Checkbox } from "antd";
 
 /**
  * this component build single item for lists, including its actions.
@@ -23,6 +23,7 @@ const Item: React.FC<IItemProps> = (props) => {
         checked={checked}
         disabled={checked}
         onChange={() => props.onDoneHandler(props.item.id)}
+        style={{ flexGrow: 1, alignSelf: "center" }}
       >
         {props.item.content}
       </Checkbox>
@@ -32,16 +33,14 @@ const Item: React.FC<IItemProps> = (props) => {
   const checkboxItem = getCheckboxItem();
 
   return (
-    <div>
-      <Space size={"small"} align={"center"}>
-        {checkboxItem}
-        <Button
-          type="text"
-          icon={<DeleteOutlined style={{ fontSize: "15px" }} />}
-          onClick={() => props.onDeleteHandler(props.item.id)}
-          style={{ float: "right" }}
-        />
-      </Space>
+    <div style={{ display: "flex", width: "100%", height: "100%" }}>
+      {checkboxItem}
+      <Button
+        type="text"
+        icon={<DeleteOutlined style={{ fontSize: "15px" }} />}
+        onClick={() => props.onDeleteHandler(props.item.id)}
+        style={{ marginLeft: "auto", alignSelf: "center" }}
+      />
     </div>
   );
 };
