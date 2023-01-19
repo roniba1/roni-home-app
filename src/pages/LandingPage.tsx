@@ -22,7 +22,7 @@ const LandingPage: React.FC = () => {
     });
 
     return <div style={{margin: "75px"}}>
-        <Title level={2} style={{textAlign: "center"}}>
+        <Title level={3} style={{textAlign: "center"}}>
             Hello!
             Welcome To my home app
         </Title>

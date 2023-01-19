@@ -16,10 +16,10 @@ function HomeApp() {
         <Router>
             <div>
                 <Layout>
-                    <Header style={{ background: "#E5f1f7", padding: 0, textAlign: "center" }}>
+                    <Header style={{ background: "#E5f1f7", padding: 0, textAlign: "center", height: "90px" }}>
                         <MyHeader />
                     </Header>
-                    <Layout style={{ display: 'flex', minHeight: '100vh', height: '100vh' }}>
+                    <Layout style={{ display: 'flex'}}>
                         <Sider theme={"light"}
                                style={{background: "#E5f1f7"}}>
                             <SideBar />
@@ -46,7 +46,7 @@ function HomeApp() {
                             </div>
                         </Content>
                     </Layout>
-                    <Footer style={{ background: "#E5f1f7", padding: 0, textAlign: "center" }}>Footer!</Footer>
+                    <Footer style={{ background: "#E5f1f7", padding: 0, textAlign: "center" }}>Roni's Home App @2022 Created by Roni Singer Ben Ari</Footer>
                 </Layout>
             </div>
         </Router>
