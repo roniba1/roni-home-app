@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import IEventData from "../interfaces/calendar/IEventData";
 import IMonthEvents from "../interfaces/calendar/IMonthEvents";
 import IMonthData from "../interfaces/calendar/IMonthData";
+import { BASE_URL } from "../constants/calender/CalendarConstants"
 import dayjs from "dayjs";
 import "dayjs/locale/zh-cn";
 import { Calendar } from "antd";
@@ -28,7 +29,7 @@ const CalendarPage: React.FC = () => {
    */
   const fetchData = async (currentMonth: number) => {
     const response = await axios.get<IMonthData>(
-      `http://localhost:3001/calendar/${currentMonth}`
+      `${BASE_URL}${currentMonth}`
     );
 
     setCalendarData(response.data.content);
@@ -89,7 +90,7 @@ const CalendarPage: React.FC = () => {
     const listData = getListData(value);
 
     return (
-      <ul className="events">
+      <ul>
         {listData.map((item: IEventData) => (
           <li key={item.content}>{item.content}</li>
         ))}

@@ -5,6 +5,7 @@ import MyHeader from "./components/layout/Header";
 import Routes from "./components/layout/Routes";
 import MyFooter from "./components/layout/Footer";
 import { Layout } from "antd";
+import "./App.css"
 
 const { Content } = Layout;
 

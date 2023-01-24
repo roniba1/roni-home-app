@@ -1,8 +1,8 @@
 import {
-  API_KEY,
-  UNITS,
   TITLE,
   LOCATIONS,
+  API_URL,
+  IMG_URL
 } from "../constants/forecast/ForecastConstants";
 
 /**
@@ -17,7 +17,7 @@ class ForecastService {
    * @returns {string} - Url for external API call
    */
   static getApiUrl = (lat: number, lon: number) => {
-    return `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=${UNITS}&appid=${API_KEY}`;
+    return `${API_URL.BASE_URL}${lat}${API_URL.URL_MIDDLE}${lon}${API_URL.URL_END}`;
   };
 
   /**
@@ -63,7 +63,7 @@ class ForecastService {
    * @returns {string} - The icon image url
    */
   static getImageUrl = (icon: string) => {
-    return `http://openweathermap.org/img/wn/${icon}@2x.png`;
+    return `${IMG_URL.BASE_URL}${icon}${IMG_URL.URL_END}`;
   };
 }
 

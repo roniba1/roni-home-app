@@ -1,4 +1,4 @@
-import { AddItemActionKind } from "../../constants/items/AddItemConstants";
+import { ADD_ITEM_ACTION_KIND } from "../../constants/items/AddItemConstants";
 import IAddItemState from "./IAddItemState";
 
 /**
@@ -6,10 +6,10 @@ import IAddItemState from "./IAddItemState";
  */
 type IAddItemAction =
   | {
-      type: AddItemActionKind.CONTENT | AddItemActionKind.TYPE;
+      type: ADD_ITEM_ACTION_KIND.CONTENT | ADD_ITEM_ACTION_KIND.TYPE;
       payload: string;
     }
-  | { type: AddItemActionKind.OPEN; payload: boolean }
-  | { type: AddItemActionKind.ALL; payload: IAddItemState };
+  | { type: ADD_ITEM_ACTION_KIND.OPEN; payload: boolean }
+  | { type: ADD_ITEM_ACTION_KIND.ALL; payload: IAddItemState };
 
 export default IAddItemAction;

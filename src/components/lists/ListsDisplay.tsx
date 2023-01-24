@@ -6,6 +6,12 @@ import FetcherService from "../../services/FetcherService";
 import { Space } from "antd";
 import AddItem from "../items/AddItem";
 import SubListsGrid from "./SubListsGrid";
+import {
+  CLASS_NAMES,
+  LISTS_DISPLAY_SPACE_DIRECTION,
+  LISTS_DISPLAY_SPACE_SIZE,
+} from "../../constants/lists/ListsConstants";
+import "./Lists.css";
 
 /**
  * This reusable component displays Lists for the received settings from props.
@@ -37,7 +43,6 @@ const ListsDisplay: React.FC<IListsDisplayProps> = (props) => {
   useEffect(() => {
     // noinspection JSIgnoredPromiseFromCall
     fetchData();
-
   }, [fetchData]);
 
   /**
@@ -117,7 +122,7 @@ const ListsDisplay: React.FC<IListsDisplayProps> = (props) => {
       // Else - return
       return item;
     });
-  }
+  };
 
   /**
    * This function is the doneHandler for each item, It's a callback that called when the user
@@ -153,16 +158,19 @@ const ListsDisplay: React.FC<IListsDisplayProps> = (props) => {
   };
 
   return (
-    <div style={{ margin: "25px" }}>
+    <div className={CLASS_NAMES.MAIN}>
       <Space
-        direction="vertical"
-        size="middle"
-        style={{
-          display: "flex",
-        }}
+        className={CLASS_NAMES.SPACE}
+        direction={LISTS_DISPLAY_SPACE_DIRECTION}
+        size={LISTS_DISPLAY_SPACE_SIZE}
       >
         <AddItem onItemAdded={onItemAdded} listsSettings={listsSettings} />
-        <SubListsGrid listsSettings={listsSettings} itemsList={allItemsList} onDeleteHandler={onDeleteHandler} onDoneHandler={onDoneHandler} />
+        <SubListsGrid
+          listsSettings={listsSettings}
+          itemsList={allItemsList}
+          onDeleteHandler={onDeleteHandler}
+          onDoneHandler={onDoneHandler}
+        />
       </Space>
     </div>
   );

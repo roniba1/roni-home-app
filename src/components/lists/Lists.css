@@ -1,0 +1,7 @@
+.lists-display {
+    margin: 25px;
+}
+
+.lists-display-space {
+    display: flex;
+}

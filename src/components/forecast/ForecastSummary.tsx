@@ -1,6 +1,7 @@
 import React from "react";
 import IForecastSummaryProps from "../../interfaces/forecast/IForecastSummaryProps";
 import ForecastService from "../../services/ForecastService";
+import { ICON_WIDTH } from "../../constants/forecast/ForecastConstants"
 import { Image } from "antd";
 
 /**
@@ -16,7 +17,7 @@ const ForecastSummary: React.FC<IForecastSummaryProps> = (props) => {
 
   const imageUrl = ForecastService.getImageUrl(props.icon);
 
-  const image = <Image width={25} preview={false} src={imageUrl} />;
+  const image = <Image width={ICON_WIDTH} preview={false} src={imageUrl} />;
 
   return (
     <div>

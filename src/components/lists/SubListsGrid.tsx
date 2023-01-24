@@ -3,6 +3,7 @@ import IListType from "../../interfaces/lists/IListType";
 import ItemsList from "./ItemsList";
 import { List } from "antd";
 import ISubListsGridProps from "../../interfaces/lists/ISubListsGridProps";
+import { SUB_LISTS_GRID } from "../../constants/lists/ListsConstants";
 
 /**
  * This component render the ItemsList component for each sub list and display all
@@ -34,7 +35,7 @@ const SubListsGrid: React.FC<ISubListsGridProps> = (props) => {
     // Build a List grid from all ItemsList to display
     listGrid = (
       <List
-        grid={{ gutter: 16, column: 3 }}
+        {...SUB_LISTS_GRID}
         dataSource={renderedList}
         renderItem={(item) => <List.Item>{item}</List.Item>}
       />

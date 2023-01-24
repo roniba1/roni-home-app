@@ -1,6 +1,12 @@
 import React from "react";
-import { Descriptions, Spin } from "antd";
+import { Descriptions } from "antd";
 import IForecastDescriptionProps from "../../interfaces/forecast/IForecastDescriptionProps";
+import {
+  LABELS,
+  LOADER_TEXT,
+  CLASS_NAMES,
+} from "../../constants/forecast/ForecastConstants";
+import Loader from "../Loader";
 
 /**
  * This component using the Antd Descriptions component to display forecast data
@@ -12,36 +18,37 @@ const ForecastDescriptions: React.FC<IForecastDescriptionProps> = (props) => {
 
   // If weatherData is null, display loading spinner
   if (weatherData === null) {
-    return <Spin tip="Loading weather data" size="large">
-        <div style={{ padding: "24px", margin: "25px" }} />
-      </Spin>;
+    return <Loader tip={LOADER_TEXT} />;
   }
 
-  return <div style={{ margin: "25px" }}>
-      <Descriptions bordered title={title} extra={selector}>
-        <Descriptions.Item label="Summary">
-          {summary}
-        </Descriptions.Item>
-        <Descriptions.Item label="Temperature">
-          {weatherData.temp}
-        </Descriptions.Item>
-        <Descriptions.Item label="Feels like">
-          {weatherData.feels_like}
-        </Descriptions.Item>
-        <Descriptions.Item label="Humidity">
-          {weatherData.humidity}%
-        </Descriptions.Item>
-        <Descriptions.Item label="UV index">
-          {weatherData.uvi}
-        </Descriptions.Item>
-        <Descriptions.Item label="Wind speed">
-          {weatherData.wind_speed}
-        </Descriptions.Item>
-        <Descriptions.Item label="Cloudiness">
-          {weatherData.clouds}%
-        </Descriptions.Item>
-      </Descriptions>
-    </div>;
+  return (
+    <Descriptions
+      className={CLASS_NAMES.DESCRIPTIONS}
+      bordered
+      title={title}
+      extra={selector}
+    >
+      <Descriptions.Item label={LABELS.SUMMARY}>{summary}</Descriptions.Item>
+      <Descriptions.Item label={LABELS.TEMP}>
+        {weatherData.temp}
+      </Descriptions.Item>
+      <Descriptions.Item label={LABELS.FEELS_LIKE}>
+        {weatherData.feels_like}
+      </Descriptions.Item>
+      <Descriptions.Item label={LABELS.HUMIDITY}>
+        {weatherData.humidity}%
+      </Descriptions.Item>
+      <Descriptions.Item label={LABELS.UVI}>
+        {weatherData.uvi}
+      </Descriptions.Item>
+      <Descriptions.Item label={LABELS.WIND_SPEED}>
+        {weatherData.wind_speed}
+      </Descriptions.Item>
+      <Descriptions.Item label={LABELS.CLOUDS}>
+        {weatherData.clouds}%
+      </Descriptions.Item>
+    </Descriptions>
+  );
 };
 
 export default ForecastDescriptions;

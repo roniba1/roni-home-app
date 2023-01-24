@@ -1,6 +1,6 @@
 import IAddItemState from "../../interfaces/items/IAddItemState";
 import IAddItemAction from "../../interfaces/items/IAddItemAction";
-import { AddItemActionKind } from "../../constants/items/AddItemConstants";
+import { ADD_ITEM_ACTION_KIND } from "../../constants/items/AddItemConstants";
 
 /**
  * This function is a Reducer function for useReducer hook
@@ -14,28 +14,28 @@ const reducer = (state: IAddItemState, action: IAddItemAction) => {
 
   switch (type) {
     // Set newContent
-    case AddItemActionKind.CONTENT:
+    case ADD_ITEM_ACTION_KIND.CONTENT:
       return {
         ...state,
         newContent: payload,
       };
 
     //Set contentType
-    case AddItemActionKind.TYPE:
+    case ADD_ITEM_ACTION_KIND.TYPE:
       return {
         ...state,
         contentType: payload,
       };
 
     // Set is modal open
-    case AddItemActionKind.OPEN:
+    case ADD_ITEM_ACTION_KIND.OPEN:
       return {
         ...state,
         open: payload,
       };
 
     // Set all pieces of state
-    case AddItemActionKind.ALL:
+    case ADD_ITEM_ACTION_KIND.ALL:
       return payload;
 
     default:

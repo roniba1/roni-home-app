@@ -22,7 +22,7 @@
     },
     {
       "content": "Go to supermarket",
-      "type": "todo",
+      "type": "done",
       "id": 10
     },
     {
@@ -156,6 +156,11 @@
       "content": "Shampoo",
       "type": "other",
       "id": 23
+    },
+    {
+      "content": "Soap",
+      "type": "other",
+      "id": 24
     }
   ],
   "calendar": [

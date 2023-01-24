@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { LOCATIONS } from "../constants/forecast/ForecastConstants";
+import { LOCATIONS, CLASS_NAMES } from "../constants/forecast/ForecastConstants";
 import IWeatherData from "../interfaces/forecast/IWeatherData";
 import ILocationData from "../interfaces/forecast/ILocationData";
 import ForecastService from "../services/ForecastService";
 import ForecastDescriptions from "../components/forecast/ForecastDescriptions";
 import ForecastSummary from "../components/forecast/ForecastSummary";
 import { Select } from "antd";
+import "./ForecastPage.css";
 
 /**
  * This component builds the Forecast Page for the app
@@ -55,10 +56,10 @@ const ForecastPage: React.FC = () => {
   // The selector is using Antd Select component
   const selector = (
     <Select
+      className={CLASS_NAMES.SELECT}
       value={locationData.label}
       onChange={handleSelectChange}
       options={ForecastService.getLocationsOptions()}
-      style={{ width: 130 }}
     />
   );
 
