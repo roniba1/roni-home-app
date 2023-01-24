@@ -4,6 +4,10 @@ import { NavLink } from "react-router-dom";
 import PagesLinks from "../../constants/pages/PagesLinks";
 // @ts-ignore
 import logo from "../../assets/logo.PNG";
+import {
+  CLASS_NAMES,
+  HEADER_IMG_ALT,
+} from "../../constants/layout/LayoutConstants";
 
 const { Header } = Layout;
 
@@ -13,16 +17,13 @@ const { Header } = Layout;
  */
 const MyHeader: React.FC = () => {
   return (
-    <Header
-      style={{
-        background: "#E5f1f7",
-        padding: 0,
-        textAlign: "center",
-        height: "90px",
-      }}
-    >
+    <Header className={CLASS_NAMES.HEADER}>
       <NavLink to={PagesLinks[0].path}>
-        <img src={logo} alt="logo" height="90px" />
+        <img
+          className={CLASS_NAMES.HEADER_IMG}
+          src={logo}
+          alt={HEADER_IMG_ALT}
+        />
       </NavLink>
     </Header>
   );

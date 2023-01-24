@@ -57,7 +57,7 @@ const AddItem: React.FC<IAddItemProps> = (props) => {
         newContent: INITIAL_STRING_VALUE,
         contentType: INITIAL_STRING_VALUE,
         open: false
-      },
+      }
     });
   };
 
@@ -70,7 +70,7 @@ const AddItem: React.FC<IAddItemProps> = (props) => {
   const handleInputChange = (event: React.FormEvent<HTMLInputElement>) => {
     dispatch({
       type: ADD_ITEM_ACTION_KIND.CONTENT,
-      payload: event.currentTarget.value,
+      payload: event.currentTarget.value
     });
   };
 
@@ -83,7 +83,7 @@ const AddItem: React.FC<IAddItemProps> = (props) => {
   const handleSelectChange = (value: string) => {
     dispatch({
       type: ADD_ITEM_ACTION_KIND.TYPE,
-      payload: value,
+      payload: value
     });
   };
 

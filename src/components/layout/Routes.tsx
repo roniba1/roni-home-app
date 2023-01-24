@@ -5,6 +5,7 @@ import ToDoPage from "../../pages/ToDoPage";
 import GroceryListPage from "../../pages/GroceryListPage";
 import CalendarPage from "../../pages/CalendarPage";
 import ForecastPage from "../../pages/ForecastPage";
+import { PATHS } from "../../constants/pages/PagesLinks";
 
 /**
  * This component is using for routing in the app and using ReactRouter
@@ -14,19 +15,19 @@ const Routes: React.FC = () => {
   return (
     <div>
       <Switch>
-        <Route exact path="/">
+        <Route exact path={PATHS.HOME}>
           <LandingPage />
         </Route>
-        <Route path="/todoList">
+        <Route path={PATHS.TODO}>
           <ToDoPage />
         </Route>
-        <Route path="/groceryList">
+        <Route path={PATHS.GROCERY}>
           <GroceryListPage />
         </Route>
-        <Route path="/calendar">
+        <Route path={PATHS.CALENDAR}>
           <CalendarPage />
         </Route>
-        <Route path="/forecast">
+        <Route path={PATHS.FORECAST}>
           <ForecastPage />
         </Route>
       </Switch>

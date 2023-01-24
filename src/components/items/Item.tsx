@@ -2,6 +2,7 @@ import React from "react";
 import IItemProps from "../../interfaces/items/IItemProps";
 import { DeleteOutlined } from "@ant-design/icons";
 import { Button, Checkbox } from "antd";
+import { CLASS_NAMES, BUTTON_TYPE } from "../../constants/items/ItemConstants";
 
 /**
  * this component build single item for lists, including its actions.
@@ -20,10 +21,10 @@ const Item: React.FC<IItemProps> = (props) => {
     const checked = props.item.type === props.doneType;
     return (
       <Checkbox
+        className={CLASS_NAMES.CHECKBOX}
         checked={checked}
         disabled={checked}
         onChange={() => props.onDoneHandler(props.item.id)}
-        style={{ flexGrow: 1, alignSelf: "center" }}
       >
         {props.item.content}
       </Checkbox>
@@ -37,13 +38,13 @@ const Item: React.FC<IItemProps> = (props) => {
    * It contains the checkbox and text element and button element with delete icon
    */
   return (
-    <div style={{ display: "flex", width: "100%", height: "100%" }}>
+    <div className={CLASS_NAMES.MAIN}>
       {checkboxItem}
       <Button
-        type="text"
-        icon={<DeleteOutlined style={{ fontSize: "15px" }} />}
+        className={CLASS_NAMES.BUTTON}
+        type={BUTTON_TYPE}
+        icon={<DeleteOutlined className={CLASS_NAMES.ICON} />}
         onClick={() => props.onDeleteHandler(props.item.id)}
-        style={{ marginLeft: "auto", alignSelf: "center" }}
       />
     </div>
   );

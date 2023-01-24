@@ -4,6 +4,11 @@ import PagesLinks from "../../constants/pages/PagesLinks";
 import IPageLink from "../../interfaces/pages/IPageLink";
 import DynamicIcon from "./DynamicIcon";
 import { Menu, Space, Layout } from "antd";
+import {
+  SIDEBAR_THEME,
+  CLASS_NAMES,
+  SIDEBAR_MODE,
+} from "../../constants/layout/LayoutConstants";
 
 const { Sider } = Layout;
 
@@ -12,7 +17,7 @@ const { Sider } = Layout;
  * Menu components and ReactRouter NavLink in order to display a clickable sidebar menu for all app's pages
  */
 const SideBar: React.FC = () => {
-    // Mapping on PagesLinks in order to build the links menu items
+  // Mapping on PagesLinks in order to build the links menu items
   const renderedLinks = PagesLinks.map((link: IPageLink) => {
     return (
       <Menu.Item key={link.path}>
@@ -27,11 +32,11 @@ const SideBar: React.FC = () => {
   });
 
   return (
-    <Sider theme={"light"} style={{ background: "#E5f1f7" }}>
+    <Sider className={CLASS_NAMES.SIDEBAR} theme={SIDEBAR_THEME}>
       <Menu
-        theme={"light"}
-        mode="inline"
-        style={{ background: "#E5f1f7", padding: 0, textAlign: "left" }}
+        className={CLASS_NAMES.SIDEBAR_MENU}
+        theme={SIDEBAR_THEME}
+        mode={SIDEBAR_MODE}
       >
         {renderedLinks}
       </Menu>

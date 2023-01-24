@@ -9,11 +9,14 @@ import IDynamicIconProps from "../../interfaces/layout/IDynamicIconProps";
  */
 const DynamicIcon: React.FC<IDynamicIconProps> = ({ type }) => {
   const AntIcon = React.lazy(
-    () => import(`@ant-design/icons/es/icons/${type}.js`)
+    () =>
+      import(
+        `@ant-design/icons/es/icons/${type}.js`
+      )
   );
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<div></div>}>
       <AntIcon />
     </Suspense>
   );

@@ -1,6 +1,7 @@
 import IItems from "../interfaces/items/IItems";
 import ISingleItem from "../interfaces/items/ISingleItem";
 import axios from "axios";
+import { DB_BASE_URL } from "../constants/AppConstants";
 
 /**
  * This is a static service class for Lists pages that communicates with the DB
@@ -13,9 +14,7 @@ class FetcherService {
    * @returns {Promise<IItems>} - The Promise with the data from DB
    */
   static fetchData = async (listName: string) => {
-    const response = await axios.get<IItems>(
-      `http://localhost:3001/${listName}`
-    );
+    const response = await axios.get<IItems>(`${DB_BASE_URL}${listName}`);
     return response.data;
   };
 
@@ -32,7 +31,7 @@ class FetcherService {
     item: { content: string; type: string }
   ) => {
     const response = await axios.post<ISingleItem>(
-      `http://localhost:3001/${listName}`,
+      `${DB_BASE_URL}${listName}`,
       item
     );
     return response.data;
@@ -46,7 +45,7 @@ class FetcherService {
    * @returns {Promise<void>}
    */
   static deleteItem = async (listName: string, id: number) => {
-    await axios.delete<ISingleItem>(`http://localhost:3001/${listName}/${id}`);
+    await axios.delete<ISingleItem>(`${DB_BASE_URL}${listName}/${id}`);
   };
 
   /**
@@ -59,9 +58,8 @@ class FetcherService {
    * @returns {Promise<ISingleItem>} - The new data object from DB
    */
   static editItem = async (listName: string, id: number, item: ISingleItem) => {
-    console.log(listName, id, item);
     const response = await axios.put<ISingleItem>(
-      `http://localhost:3001/${listName}/${id}`,
+      `${DB_BASE_URL}${listName}/${id}`,
       {
         ...item,
       }

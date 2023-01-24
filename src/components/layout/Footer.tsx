@@ -1,5 +1,9 @@
 import React from "react";
 import { Layout } from "antd";
+import {
+  CLASS_NAMES,
+  FOOTER_TEXT,
+} from "../../constants/layout/LayoutConstants";
 
 const { Footer } = Layout;
 
@@ -8,11 +12,7 @@ const { Footer } = Layout;
  * Its using Antd Layout & Footer components.
  */
 const MyFooter: React.FC = () => {
-  return (
-    <Footer style={{ background: "#E5f1f7", padding: 0, textAlign: "center" }}>
-      Roni's Home App @2022 Created by Roni Singer Ben Ari
-    </Footer>
-  );
+  return <Footer className={CLASS_NAMES.FOOTER}>{FOOTER_TEXT}</Footer>;
 };
 
 export default MyFooter;

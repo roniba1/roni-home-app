@@ -2,3 +2,34 @@
     padding: 24px;
     margin: 25px;
 }
+
+.app-footer {
+    background: #E5f1f7 !important;
+    padding: 0 !important;
+    text-align: center;
+}
+
+.app-header {
+    background: #E5f1f7 !important;
+    padding: 0;
+    text-align: center;
+    height: 90px !important;
+}
+
+.header-img {
+    height: 90px;
+}
+
+.sidebar {
+    background: #E5f1f7 !important;
+}
+
+.sidebar-menu {
+    background: #E5f1f7 !important;
+    padding: 0 !important;
+    text-align: left;
+}
+
+.app-layout {
+    display: flex;
+}
