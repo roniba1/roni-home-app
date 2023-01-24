@@ -53,11 +53,6 @@
   ],
   "grocery": [
     {
-      "content": "Milk",
-      "type": "done",
-      "id": 1
-    },
-    {
       "content": "Yogurt",
       "type": "dairy",
       "id": 2
@@ -101,11 +96,6 @@
       "content": "Salt",
       "type": "cond",
       "id": 10
-    },
-    {
-      "content": "Strawberry",
-      "type": "done",
-      "id": 11
     },
     {
       "content": "Grapes",
@@ -174,7 +164,6 @@
       "content": [
         {
           "id": 8,
-          "type": "success",
           "content": "Calanit's Birthday!"
         }
       ]
@@ -184,7 +173,6 @@
       "content": [
         {
           "id": 17,
-          "type": "success",
           "content": "Geffen & Eran's Birthday!"
         }
       ]
@@ -206,22 +194,18 @@
       "content": [
         {
           "id": 11,
-          "type": "success",
           "content": "Galia's Birthday!"
         },
         {
           "id": 12,
-          "type": "success",
           "content": "Noam's Birthday!"
         },
         {
           "id": 18,
-          "type": "success",
           "content": "Zahi's Birthday!"
         },
         {
           "id": 29,
-          "type": "success",
           "content": "Tamar's Birthday!"
         }
       ]
@@ -235,7 +219,6 @@
       "content": [
         {
           "id": 30,
-          "type": "success",
           "content": "Aran's Birthday!"
         }
       ]
@@ -253,7 +236,6 @@
       "content": [
         {
           "id": 14,
-          "type": "success",
           "content": "Roni's Birthday!"
         }
       ]

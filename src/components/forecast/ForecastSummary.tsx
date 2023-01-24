@@ -1,17 +1,20 @@
 import React from "react";
+import IForecastSummaryProps from "../../interfaces/forecast/IForecastSummaryProps";
+import ForecastService from "../../services/ForecastService";
 import { Image } from "antd";
 
-interface IForecastSummaryProps {
-  icon: string | undefined;
-  description: string | undefined;
-}
-
+/**
+ * This component build the forecast summary with icon and description text
+ *
+ * @param {IForecastSummaryProps} props - The data for the component
+ */
 const ForecastSummary: React.FC<IForecastSummaryProps> = (props) => {
+  // Do not display if data is missing
   if (!props.icon || !props.description) {
     return null;
   }
 
-  const imageUrl = `http://openweathermap.org/img/wn/${props.icon}@2x.png`;
+  const imageUrl = ForecastService.getImageUrl(props.icon);
 
   const image = <Image width={25} preview={false} src={imageUrl} />;
 

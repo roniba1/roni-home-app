@@ -1,6 +1,9 @@
 import { AddItemActionKind } from "../../constants/items/AddItemConstants";
 import IAddItemState from "./IAddItemState";
 
+/**
+ * This type represents the Action object for AddItem Reducer function
+ */
 type IAddItemAction =
   | {
       type: AddItemActionKind.CONTENT | AddItemActionKind.TYPE;

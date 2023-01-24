@@ -1,3 +1,6 @@
+/**
+ * This interface represents the data returns from OpenWeather API and relevant for the app
+ */
 interface IWeatherData {
   temp: number;
   feels_like: number;

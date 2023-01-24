@@ -1,8 +1,9 @@
-export const API_KEY = "7830b3a060d8739ac5d8271370d2f78d";
+import ILocationData from "../../interfaces/forecast/ILocationData";
 
-export const UNITS = "metric";
-
-export const LOCATIONS = [
+/**
+ * LOCATIONS constant holds the data for the relevant locations to retrieve forecast
+ */
+export const LOCATIONS: ILocationData[] = [
   {
     value: "home",
     label: "Home",
@@ -22,5 +23,15 @@ export const LOCATIONS = [
     longitude: 34.85,
   },
 ];
+
+/**
+ * API_KEY for the OpenWeather API calls
+ */
+export const API_KEY = "7830b3a060d8739ac5d8271370d2f78d";
+
+/**
+ * UNITS for the OpenWeather API calls
+ */
+export const UNITS = "metric";
 
 export const TITLE = "Current Forecast - ";

@@ -3,10 +3,16 @@ import { NavLink } from "react-router-dom";
 import { Row, Col, Card, Typography } from "antd";
 import PagesLinks from "../constants/pages/PagesLinks";
 
+/**
+ * This component displays the app's Landing page.
+ * It's using Antd Card components to display the pages and link to them.
+ */
 const LandingPage: React.FC = () => {
   const { Title } = Typography;
 
+  // renderedCols is the columns & Card elements to display
   const renderedCols = PagesLinks.map((pageLink) => {
+    // Do not build a Card for Home Page (current page)
     if (pageLink.label === PagesLinks[0].label) {
       return null;
     }

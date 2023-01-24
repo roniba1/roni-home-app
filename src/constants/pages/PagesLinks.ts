@@ -1,5 +1,8 @@
 import IPageLink from "../../interfaces/pages/IPageLink";
 
+/**
+ * This Data structure holds the App pages data
+ */
 const PagesLinks: IPageLink[] = [
   {
     label: "Home",

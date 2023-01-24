@@ -12,12 +12,12 @@ import { Button, Checkbox } from "antd";
  */
 const Item: React.FC<IItemProps> = (props) => {
   /**
-   * This function build the relevant Checkbox component for current Item
+   * This function build the relevant Checkbox component for current Item with text next to it
    *
    * @returns {JSX.Element} - The relevant Checkbox
    */
   const getCheckboxItem = () => {
-    const checked = props.item.type === "done";
+    const checked = props.item.type === props.doneType;
     return (
       <Checkbox
         checked={checked}
@@ -32,6 +32,10 @@ const Item: React.FC<IItemProps> = (props) => {
 
   const checkboxItem = getCheckboxItem();
 
+  /**
+   * This piece of code build the JSX.Element to return.
+   * It contains the checkbox and text element and button element with delete icon
+   */
   return (
     <div style={{ display: "flex", width: "100%", height: "100%" }}>
       {checkboxItem}

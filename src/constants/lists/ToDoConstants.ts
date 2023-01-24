@@ -2,13 +2,14 @@ import IListType from "../../interfaces/lists/IListType";
 
 class ToDoConstants {
   static LIST_NAME = "todo";
+  static DONE_TYPE = "done";
   static LISTS_TYPES: IListType[] = [
     {
       type: "todo",
       displayName: "To Do List",
     },
     {
-      type: "done",
+      type: ToDoConstants.DONE_TYPE,
       displayName: "Done List",
     },
   ];

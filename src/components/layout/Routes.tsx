@@ -6,6 +6,10 @@ import GroceryListPage from "../../pages/GroceryListPage";
 import CalendarPage from "../../pages/CalendarPage";
 import ForecastPage from "../../pages/ForecastPage";
 
+/**
+ * This component is using for routing in the app and using ReactRouter
+ * Switch & Route to do it.
+ */
 const Routes: React.FC = () => {
   return (
     <div>

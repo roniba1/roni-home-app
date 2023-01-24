@@ -7,7 +7,12 @@ import { Menu, Space, Layout } from "antd";
 
 const { Sider } = Layout;
 
+/**
+ * This component is the sidebar in the app layout. Its using Antd Layout, Sider &
+ * Menu components and ReactRouter NavLink in order to display a clickable sidebar menu for all app's pages
+ */
 const SideBar: React.FC = () => {
+    // Mapping on PagesLinks in order to build the links menu items
   const renderedLinks = PagesLinks.map((link: IPageLink) => {
     return (
       <Menu.Item key={link.path}>

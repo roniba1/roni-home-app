@@ -72,7 +72,7 @@ const AddItem: React.FC<IAddItemProps> = (props) => {
   };
 
   const typesListToAdd = props.listsSettings.typesNames.filter((listType) => {
-    return listType.type !== "done";
+    return listType.type !== props.listsSettings.doneType;
   });
 
   const options = typesListToAdd.map((listType) => {

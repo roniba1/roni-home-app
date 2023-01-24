@@ -1,29 +1,27 @@
 import React from "react";
 import { Descriptions, Spin } from "antd";
-import IWeatherData from "../../interfaces/forecast/IWeatherData";
+import IForecastDescriptionProps from "../../interfaces/forecast/IForecastDescriptionProps";
 
-interface IForecastDescriptionProps {
-  title: string;
-  selector: JSX.Element;
-  summary: JSX.Element;
-  weatherData: IWeatherData | null;
-}
-
+/**
+ * This component using the Antd Descriptions component to display forecast data
+ *
+ * @param {IForecastDescriptionProps} props - The title, selector, summary & weatherData received
+ */
 const ForecastDescriptions: React.FC<IForecastDescriptionProps> = (props) => {
   const { title, selector, summary, weatherData } = props;
 
+  // If weatherData is null, display loading spinner
   if (weatherData === null) {
-    return (
-      <Spin tip="Loading weather data" size="large">
-        <div style={{ padding: "24px" }} />
-      </Spin>
-    );
+    return <Spin tip="Loading weather data" size="large">
+        <div style={{ padding: "24px", margin: "25px" }} />
+      </Spin>;
   }
 
-  return (
-    <div style={{ margin: "25px" }}>
+  return <div style={{ margin: "25px" }}>
       <Descriptions bordered title={title} extra={selector}>
-        <Descriptions.Item label="Summary">{summary}</Descriptions.Item>
+        <Descriptions.Item label="Summary">
+          {summary}
+        </Descriptions.Item>
         <Descriptions.Item label="Temperature">
           {weatherData.temp}
         </Descriptions.Item>
@@ -43,8 +41,7 @@ const ForecastDescriptions: React.FC<IForecastDescriptionProps> = (props) => {
           {weatherData.clouds}%
         </Descriptions.Item>
       </Descriptions>
-    </div>
-  );
+    </div>;
 };
 
 export default ForecastDescriptions;

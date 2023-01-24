@@ -1,3 +1,4 @@
+// Action types for AddItem useReducer hook
 export enum AddItemActionKind {
   CONTENT = "CONTENT",
   TYPE = "TYPE",
