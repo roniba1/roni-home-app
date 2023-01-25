@@ -3,7 +3,8 @@ import IListType from "../../interfaces/lists/IListType";
 import ItemsList from "./ItemsList";
 import { List } from "antd";
 import ISubListsGridProps from "../../interfaces/lists/ISubListsGridProps";
-import { SUB_LISTS_GRID } from "../../constants/lists/ListsConstants";
+import { SUB_LISTS_GRID, LOADER_TEXT } from "../../constants/lists/ListsConstants";
+import Loader from "../Loader";
 
 /**
  * This component render the ItemsList component for each sub list and display all
@@ -13,6 +14,10 @@ import { SUB_LISTS_GRID } from "../../constants/lists/ListsConstants";
  */
 const SubListsGrid: React.FC<ISubListsGridProps> = (props) => {
   let renderedList = null;
+
+  if (props.itemsList === null) {
+    return <Loader tip={LOADER_TEXT} />;
+  }
 
   if (props.itemsList) {
     // Map over all types (each type is a sub list) and create an ItemList component for it

@@ -10,7 +10,8 @@ class ToDoListsPageSettings extends ListsPageSettings {
       ToDoConstants.LIST_NAME,
       ToDoConstants.LISTS_TYPES,
       ToDoConstants.ADD_ITEM_TEXT,
-      ToDoConstants.DONE_TYPE
+      ToDoConstants.DONE_TYPE,
+      ToDoConstants.LABEL
     );
   }
 

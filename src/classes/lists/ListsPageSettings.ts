@@ -16,6 +16,9 @@ abstract class ListsPageSettings {
   // The type for checked item
   protected readonly doneItemType: string;
 
+  // The List page label
+  protected readonly label: string;
+
   // This abstract function should return the type for a new item the user added to the list
   abstract newItemType: () => string;
 
@@ -23,12 +26,14 @@ abstract class ListsPageSettings {
     mainListName: string,
     listTypesNames: IListType[],
     addItemLabel: string,
-    doneItemType: string
+    doneItemType: string,
+    label: string
   ) {
     this.mainListName = mainListName;
     this.listTypesNames = listTypesNames;
     this.addItemLabel = addItemLabel;
     this.doneItemType = doneItemType;
+    this.label = label;
   }
 
   get listName() {
@@ -45,6 +50,10 @@ abstract class ListsPageSettings {
 
   get doneType() {
     return this.doneItemType;
+  }
+
+  get listLabel() {
+    return this.label;
   }
 }
 

@@ -7,11 +7,11 @@ class ToDoConstants {
   static LISTS_TYPES: IListType[] = [
     {
       type: "todo",
-      displayName: "To Do List",
+      displayName: "To Do",
     },
     {
       type: ToDoConstants.DONE_TYPE,
-      displayName: "Done List",
+      displayName: "Done",
     },
   ];
   static NEW_ITEM_TYPE = "todo";

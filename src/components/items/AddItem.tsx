@@ -1,5 +1,6 @@
 import React, { useReducer } from "react";
 import { Button } from "antd";
+import { PlusOutlined } from "@ant-design/icons";
 import reducer from "./AddItemReducer";
 import IAddItemProps from "../../interfaces/items/IAddItemProps";
 import FormInput from "./FormInput";
@@ -7,6 +8,7 @@ import FormSelect from "./FormSelect";
 import AddItemModal from "./AddItemModal";
 import {
   ADD_ITEM_ACTION_KIND,
+  ADD_ITEM_CLASS_NAME,
   INITIAL_STRING_VALUE,
   MAIN_BUTTON_TYPE,
 } from "../../constants/items/AddItemConstants";
@@ -117,8 +119,12 @@ const AddItem: React.FC<IAddItemProps> = (props) => {
   );
 
   return (
-    <div>
-      <Button type={MAIN_BUTTON_TYPE} onClick={showModal}>
+    <div className={ADD_ITEM_CLASS_NAME}>
+      <Button
+        type={MAIN_BUTTON_TYPE}
+        icon={<PlusOutlined />}
+        onClick={showModal}
+      >
         {props.listsSettings.addItemText}
       </Button>
       {modalComponent}

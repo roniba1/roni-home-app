@@ -47,7 +47,7 @@ class GroceryConstants {
     },
     {
       type: GroceryConstants.DONE_TYPE,
-      displayName: "Done",
+      displayName: "Inventory",
     },
   ];
   static ADD_ITEM_TEXT = "Add New Product";

@@ -3,13 +3,10 @@ import IItems from "../../interfaces/items/IItems";
 import ISingleItem from "../../interfaces/items/ISingleItem";
 import IListsDisplayProps from "../../interfaces/lists/IListsDisplayProps";
 import FetcherService from "../../services/FetcherService";
-import { Space } from "antd";
-import AddItem from "../items/AddItem";
 import SubListsGrid from "./SubListsGrid";
+import ListsHeader from "./ListsHeader";
 import {
-  CLASS_NAMES,
-  LISTS_DISPLAY_SPACE_DIRECTION,
-  LISTS_DISPLAY_SPACE_SIZE,
+  CLASS_NAMES
 } from "../../constants/lists/ListsConstants";
 import "./Lists.css";
 
@@ -159,19 +156,13 @@ const ListsDisplay: React.FC<IListsDisplayProps> = (props) => {
 
   return (
     <div className={CLASS_NAMES.MAIN}>
-      <Space
-        className={CLASS_NAMES.SPACE}
-        direction={LISTS_DISPLAY_SPACE_DIRECTION}
-        size={LISTS_DISPLAY_SPACE_SIZE}
-      >
-        <AddItem onItemAdded={onItemAdded} listsSettings={listsSettings} />
-        <SubListsGrid
-          listsSettings={listsSettings}
-          itemsList={allItemsList}
-          onDeleteHandler={onDeleteHandler}
-          onDoneHandler={onDoneHandler}
-        />
-      </Space>
+      <ListsHeader onItemAdded={onItemAdded} listsSettings={listsSettings} />
+      <SubListsGrid
+        listsSettings={listsSettings}
+        itemsList={allItemsList}
+        onDeleteHandler={onDeleteHandler}
+        onDoneHandler={onDoneHandler}
+      />
     </div>
   );
 };

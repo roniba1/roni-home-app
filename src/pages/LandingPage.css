@@ -3,9 +3,14 @@
 }
 
 .landing {
-    margin: 75px;
+    margin: 10px;
+}
+
+.card-title-space {
+    font-size: 16px;
 }
 
 .title {
-    text-align: center;
+    /*text-align: center;*/
+    margin-bottom: 20px;
 }

@@ -42,3 +42,5 @@ export const SUBMIT_BUTTON_TEXT = "Submit";
 
 export const CANCEL_BUTTON_HTML_TYPE = "button";
 export const CANCEL_BUTTON_TEXT = "Cancel";
+
+export const ADD_ITEM_CLASS_NAME = "add-item";

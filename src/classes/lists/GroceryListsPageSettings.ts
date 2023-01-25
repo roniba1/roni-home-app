@@ -10,7 +10,8 @@ class GroceryListsPageSettings extends ListsPageSettings {
       GroceryConstants.LIST_NAME,
       GroceryConstants.LISTS_TYPES,
       GroceryConstants.ADD_ITEM_TEXT,
-      GroceryConstants.DONE_TYPE
+      GroceryConstants.DONE_TYPE,
+      GroceryConstants.LABEL
     );
   }
 

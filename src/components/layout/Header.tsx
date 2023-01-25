@@ -1,7 +1,7 @@
 import React from "react";
 import { Layout, Menu } from "antd";
 import { NavLink } from "react-router-dom";
-import PagesLinks from "../../constants/pages/PagesLinks";
+import PAGES_LINKS from "../../constants/pages/PagesLinks";
 // @ts-ignore
 import logo from "../../assets/logo.PNG";
 import {
@@ -21,7 +21,7 @@ const { Header } = Layout;
  */
 const MyHeader: React.FC = () => {
 
-  const renderedLinks = PagesLinks.map((link: IPageLink) => {
+  const renderedLinks = PAGES_LINKS.map((link: IPageLink) => {
     return {
       key: link.path,
       icon: <DynamicIcon type={link.icon} />,
@@ -37,7 +37,7 @@ const MyHeader: React.FC = () => {
       <Menu
         theme={NAVBAR_THEME}
         mode={NAVBAR_MODE}
-        defaultSelectedKeys={[PagesLinks[0].path]}
+        defaultSelectedKeys={[PAGES_LINKS[0].path]}
         items={renderedLinks}
       ></Menu>
     </Header>

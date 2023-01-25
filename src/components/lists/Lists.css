@@ -6,6 +6,17 @@
     display: flex;
 }
 
+.lists-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.add-item {
+    padding-right: 26px;
+}
+
 .item-checkbox {
     flex-grow: 1;
     align-self: center;
