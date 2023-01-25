@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import SideBar from "./components/layout/SideBar";
 import MyHeader from "./components/layout/Header";
 import Routes from "./components/layout/Routes";
 import MyFooter from "./components/layout/Footer";
@@ -17,7 +16,6 @@ function HomeApp() {
         <Layout>
           <MyHeader />
           <Layout className={CLASS_NAMES.LAYOUT}>
-            <SideBar />
             <Content>
               <Routes />
             </Content>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout } from "antd";
+import { Layout, Menu } from "antd";
 import { NavLink } from "react-router-dom";
 import PagesLinks from "../../constants/pages/PagesLinks";
 // @ts-ignore
@@ -7,7 +7,11 @@ import logo from "../../assets/logo.PNG";
 import {
   CLASS_NAMES,
   HEADER_IMG_ALT,
+  NAVBAR_MODE,
+  NAVBAR_THEME,
 } from "../../constants/layout/LayoutConstants";
+import IPageLink from "../../interfaces/pages/IPageLink";
+import DynamicIcon from "./DynamicIcon";
 
 const { Header } = Layout;
 
@@ -16,15 +20,26 @@ const { Header } = Layout;
  * Its using Antd Layout & Header components and ReactRouter NavLink component
  */
 const MyHeader: React.FC = () => {
+
+  const renderedLinks = PagesLinks.map((link: IPageLink) => {
+    return {
+      key: link.path,
+      icon: <DynamicIcon type={link.icon} />,
+      label: <NavLink to={link.path}>{link.label}</NavLink>,
+    };
+  });
+
   return (
     <Header className={CLASS_NAMES.HEADER}>
-      <NavLink to={PagesLinks[0].path}>
-        <img
-          className={CLASS_NAMES.HEADER_IMG}
-          src={logo}
-          alt={HEADER_IMG_ALT}
-        />
-      </NavLink>
+      <div className={CLASS_NAMES.LOGO}>
+        <img src={logo} alt={HEADER_IMG_ALT} />
+      </div>
+      <Menu
+        theme={NAVBAR_THEME}
+        mode={NAVBAR_MODE}
+        defaultSelectedKeys={[PagesLinks[0].path]}
+        items={renderedLinks}
+      ></Menu>
     </Header>
   );
 };

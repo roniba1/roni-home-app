@@ -2,6 +2,7 @@ import IListType from "../../interfaces/lists/IListType";
 
 class GroceryConstants {
   static LIST_NAME = "grocery";
+  static LABEL = "Grocery List";
   static DONE_TYPE = "done";
   static LISTS_TYPES: IListType[] = [
     {

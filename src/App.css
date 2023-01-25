@@ -4,32 +4,30 @@
 }
 
 .app-footer {
-    background: #E5f1f7 !important;
+    background: #f7fafc !important;
     padding: 0 !important;
     text-align: center;
 }
 
 .app-header {
-    background: #E5f1f7 !important;
-    padding: 0;
-    text-align: center;
-    height: 90px !important;
-}
-
-.header-img {
-    height: 90px;
-}
-
-.sidebar {
-    background: #E5f1f7 !important;
-}
-
-.sidebar-menu {
-    background: #E5f1f7 !important;
-    padding: 0 !important;
-    text-align: left;
+    display: table;
+    width: 100%;
 }
 
 .app-layout {
     display: flex;
+}
+
+.ant-menu-item {
+    position: relative;
+}
+
+.logo {
+    float: left;
+    display: flex;
+}
+
+.logo img {
+    height: 60px;
+    margin-right: 20px;
 }
