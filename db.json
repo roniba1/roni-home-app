@@ -6,11 +6,6 @@
       "id": 4
     },
     {
-      "content": "Fix TV",
-      "type": "done",
-      "id": 6
-    },
-    {
       "content": "Fix Something",
       "type": "done",
       "id": 8
@@ -49,6 +44,11 @@
       "content": "Go to sleep",
       "type": "todo",
       "id": 16
+    },
+    {
+      "content": "Fix Tv",
+      "type": "done",
+      "id": 17
     }
   ],
   "grocery": [
@@ -161,6 +161,21 @@
       "content": "Soap",
       "type": "other",
       "id": 24
+    },
+    {
+      "content": "Deodorant",
+      "type": "done",
+      "id": 25
+    },
+    {
+      "content": "Bread",
+      "type": "frozen",
+      "id": 26
+    },
+    {
+      "content": "Meatballs",
+      "type": "meat",
+      "id": 27
     }
   ],
   "calendar": [

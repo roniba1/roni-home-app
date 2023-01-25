@@ -38,4 +38,7 @@ export const INPUT_FORM_ITEM = {
 
 export const SUBMIT_BUTTON_TYPE = "primary";
 export const SUBMIT_BUTTON_HTML_TYPE = "submit";
+export const SUBMIT_BUTTON_TEXT = "Submit";
+
 export const CANCEL_BUTTON_HTML_TYPE = "button";
+export const CANCEL_BUTTON_TEXT = "Cancel";
