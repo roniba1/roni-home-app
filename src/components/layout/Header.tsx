@@ -20,7 +20,6 @@ const { Header } = Layout;
  * Its using Antd Layout & Header components and ReactRouter NavLink component
  */
 const MyHeader: React.FC = () => {
-
   const renderedLinks = PAGES_LINKS.map((link: IPageLink) => {
     return {
       key: link.path,

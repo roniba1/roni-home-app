@@ -2,7 +2,7 @@ import {
   TITLE,
   LOCATIONS,
   API_URL,
-  IMG_URL
+  IMG_URL,
 } from "../constants/forecast/ForecastConstants";
 
 /**

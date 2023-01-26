@@ -46,7 +46,7 @@ export const LABELS = {
   HUMIDITY: "Humidity",
   UVI: "UV index",
   WIND_SPEED: "Wind speed",
-  CLOUDS: "Cloudiness"
+  CLOUDS: "Cloudiness",
 };
 
 export const LOADER_TEXT = "Loading weather data";
@@ -56,7 +56,7 @@ export const LOADER_TEXT = "Loading weather data";
  */
 export const CLASS_NAMES = {
   DESCRIPTIONS: "descriptions",
-  SELECT: "select"
+  SELECT: "select",
 };
 
 export const ICON_WIDTH = 25;
@@ -67,7 +67,7 @@ export const ICON_WIDTH = 25;
 export const API_URL = {
   BASE_URL: "https://api.openweathermap.org/data/3.0/onecall?lat=",
   URL_MIDDLE: "&lon=",
-  URL_END: "&units=" + UNITS + "&appid=" + API_KEY
+  URL_END: "&units=" + UNITS + "&appid=" + API_KEY,
 };
 
 /**
@@ -75,5 +75,5 @@ export const API_URL = {
  */
 export const IMG_URL = {
   BASE_URL: "https://openweathermap.org/img/wn/",
-  URL_END: "@2x.png"
+  URL_END: "@2x.png",
 };

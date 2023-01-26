@@ -2,7 +2,7 @@
  * This interface represents the prop object for DynamicIcon component
  */
 interface IDynamicIconProps {
-    type: string;
+  type: string;
 }
 
 export default IDynamicIconProps;

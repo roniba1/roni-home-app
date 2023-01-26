@@ -1,7 +1,7 @@
 import React from "react";
 import IForecastSummaryProps from "../../interfaces/forecast/IForecastSummaryProps";
 import ForecastService from "../../services/ForecastService";
-import { ICON_WIDTH } from "../../constants/forecast/ForecastConstants"
+import { ICON_WIDTH } from "../../constants/forecast/ForecastConstants";
 import { Image } from "antd";
 
 /**

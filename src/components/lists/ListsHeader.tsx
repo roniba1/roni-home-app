@@ -1,7 +1,10 @@
 import React from "react";
 import AddItem from "../items/AddItem";
 import IListsHeaderProps from "../../interfaces/lists/IListsHeaderProps";
-import { CLASS_NAMES, LIST_HEADER_TITLE_LEVEL } from "../../constants/lists/ListsConstants";
+import {
+  CLASS_NAMES,
+  LIST_HEADER_TITLE_LEVEL,
+} from "../../constants/lists/ListsConstants";
 import { Typography } from "antd";
 
 /**
@@ -15,7 +18,9 @@ const ListsHeader: React.FC<IListsHeaderProps> = (props) => {
 
   return (
     <div className={CLASS_NAMES.LISTS_HEADER}>
-      <Title level={LIST_HEADER_TITLE_LEVEL}>{props.listsSettings.listLabel}</Title>
+      <Title level={LIST_HEADER_TITLE_LEVEL}>
+        {props.listsSettings.listLabel}
+      </Title>
       <AddItem
         onItemAdded={props.onItemAdded}
         listsSettings={props.listsSettings}

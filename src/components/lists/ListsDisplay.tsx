@@ -5,9 +5,7 @@ import IListsDisplayProps from "../../interfaces/lists/IListsDisplayProps";
 import FetcherService from "../../services/FetcherService";
 import SubListsGrid from "./SubListsGrid";
 import ListsHeader from "./ListsHeader";
-import {
-  CLASS_NAMES
-} from "../../constants/lists/ListsConstants";
+import { CLASS_NAMES } from "../../constants/lists/ListsConstants";
 import "./Lists.css";
 
 /**

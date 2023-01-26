@@ -3,7 +3,10 @@ import IListType from "../../interfaces/lists/IListType";
 import ItemsList from "./ItemsList";
 import { List } from "antd";
 import ISubListsGridProps from "../../interfaces/lists/ISubListsGridProps";
-import { SUB_LISTS_GRID, LOADER_TEXT } from "../../constants/lists/ListsConstants";
+import {
+  SUB_LISTS_GRID,
+  LOADER_TEXT,
+} from "../../constants/lists/ListsConstants";
 import Loader from "../Loader";
 
 /**

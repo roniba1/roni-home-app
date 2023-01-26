@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { LOCATIONS, CLASS_NAMES } from "../constants/forecast/ForecastConstants";
+import {
+  LOCATIONS,
+  CLASS_NAMES,
+} from "../constants/forecast/ForecastConstants";
 import IWeatherData from "../interfaces/forecast/IWeatherData";
 import ILocationData from "../interfaces/forecast/ILocationData";
 import ForecastService from "../services/ForecastService";
