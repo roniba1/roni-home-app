@@ -23,7 +23,7 @@ const PAGES_LINKS: IPageLink[] = [
     path: PATHS.TODO,
     icon: "BarsOutlined",
     description:
-      "The to-do list page is designed to help you keep track of your tasks with ease. You can create two sublists- the to-do and done tasks, so you can easily see what needs to be done and what has been completed. The interface is user-friendly, so you can add new tasks, delete them and mark them as done with just a tap. With the ability to see all of your tasks in one place, you'll never miss a deadline again.",
+      "The to-do list page is designed to help you keep track of your tasks with ease. You can create two sub-lists- the to-do and done tasks, so you can easily see what needs to be done and what has been completed. The interface is user-friendly, so you can add new tasks, delete them and mark them as done with just a tap. With the ability to see all of your tasks in one place, you'll never miss a deadline again.",
   },
   {
     label: "Grocery List",

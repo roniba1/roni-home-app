@@ -40,4 +40,16 @@ This will start the development server and open the app in your default browser.
 
 * Roni Singer Ben Ari - roniba1
 
-## Acknowledgments
+## Images
+* Home page:
+![The Home Page](home-page.png)
+* To Do List page:
+![The To Do List](to-do-list-page.png)
+* Grocery List page:
+![The Grocery List](grocery-list-page.png)
+* Grocery List page with open Modal:
+![The Grocery List with modal](grocery-list-with-modal-open.png)
+* Calendar page:
+![The Calendar Page](calendar-page.png)
+* Forecast page:
+![The Forecast Page](forecast-page.png)
