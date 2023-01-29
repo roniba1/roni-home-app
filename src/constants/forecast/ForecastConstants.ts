@@ -27,7 +27,7 @@ export const LOCATIONS: ILocationData[] = [
 /**
  * API_KEY for the OpenWeather API calls
  */
-export const API_KEY = "7830b3a060d8739ac5d8271370d2f78d";
+export const API_KEY = "11111111111";
 
 /**
  * UNITS for the OpenWeather API calls
